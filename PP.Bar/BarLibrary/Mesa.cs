@@ -19,8 +19,8 @@ namespace BarLibrary
         static int ultimoNumeroMesa;
         int numeroMesa;
         float saldo;
-        static bool conEstacionamiento;
-        static EMetodoDePago metodoDePago;
+        bool conEstacionamiento;
+        EMetodoDePago metodoDePago;
         //Dictionary<int, int> pedidos;
         List<Producto> producto;
 
@@ -47,8 +47,8 @@ namespace BarLibrary
 
         public int NumeroMesa { get { return numeroMesa; } }
         public List<Producto> Producto{ get { return producto; } }
-        public static bool ConEstacionamiento { get { return conEstacionamiento; } }
-        public static EMetodoDePago MetodoDePago { get { return metodoDePago; } }
+        public bool ConEstacionamiento { get { return conEstacionamiento; } }
+        public EMetodoDePago MetodoDePago { get { return metodoDePago; } }
         public bool EsBarra { get { return numeroMesa > 15; } }
         public float Saldo { get { return saldo; } set { saldo = value; } }
         public override string ToString()
@@ -61,17 +61,26 @@ namespace BarLibrary
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Numero de {tipoMesa}: {NumeroMesa}");
             sb.AppendLine($"Saldo: {Saldo}");
+            if(conEstacionamiento==true)
+            {
+                sb.AppendLine($"Con estacionamiento");
+            }else { sb.AppendLine("Sin estacionamiento"); }
+            sb.AppendLine($"Metodo de pago: {MetodoDePago}");
 
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Agrega el producto recibido a la lista de la mesa y reduce la cantidad del mismo 
+        /// </summary>
+        /// <param name="productoRecibido"></param>
+        /// <param name="cant"></param>
         public void AgregarProductos(Producto productoRecibido,int cant)
         {
             if(productoRecibido is not null)
             {
                 producto.Add(productoRecibido);
                 productoRecibido.Cantidad -= cant;
-                
             }
         }
         public float CalcularParcial()

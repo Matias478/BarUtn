@@ -4,6 +4,9 @@
     <Compile Update="FrmAgregarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmListaEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -14,6 +17,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmRemoverEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

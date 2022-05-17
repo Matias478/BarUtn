@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             this.panelMenuIzquierda = new System.Windows.Forms.Panel();
+            this.panelSubMenuEmpleado = new System.Windows.Forms.Panel();
+            this.btnInfoMesas = new System.Windows.Forms.Button();
+            this.btnFuncionEmpleado = new System.Windows.Forms.Button();
             this.panelSubMenuAdmin = new System.Windows.Forms.Panel();
             this.btnRemoverEmpleados = new System.Windows.Forms.Button();
             this.btnAgregarEmpleados = new System.Windows.Forms.Button();
@@ -58,8 +61,8 @@
             this.btnMesa3 = new System.Windows.Forms.Button();
             this.btnMesa2 = new System.Windows.Forms.Button();
             this.btnMesa1 = new System.Windows.Forms.Button();
-            this.btnCerrarMenuPrincipal = new System.Windows.Forms.Button();
             this.panelMenuIzquierda.SuspendLayout();
+            this.panelSubMenuEmpleado.SuspendLayout();
             this.panelSubMenuAdmin.SuspendLayout();
             this.panelFormularioChico.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +71,8 @@
             // 
             this.panelMenuIzquierda.AutoScroll = true;
             this.panelMenuIzquierda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelMenuIzquierda.Controls.Add(this.panelSubMenuEmpleado);
+            this.panelMenuIzquierda.Controls.Add(this.btnFuncionEmpleado);
             this.panelMenuIzquierda.Controls.Add(this.panelSubMenuAdmin);
             this.panelMenuIzquierda.Controls.Add(this.btnFuncionAdmin);
             this.panelMenuIzquierda.Controls.Add(this.panelLogo);
@@ -77,6 +82,48 @@
             this.panelMenuIzquierda.Name = "panelMenuIzquierda";
             this.panelMenuIzquierda.Size = new System.Drawing.Size(250, 593);
             this.panelMenuIzquierda.TabIndex = 21;
+            // 
+            // panelSubMenuEmpleado
+            // 
+            this.panelSubMenuEmpleado.Controls.Add(this.btnInfoMesas);
+            this.panelSubMenuEmpleado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenuEmpleado.Location = new System.Drawing.Point(0, 360);
+            this.panelSubMenuEmpleado.Name = "panelSubMenuEmpleado";
+            this.panelSubMenuEmpleado.Size = new System.Drawing.Size(250, 100);
+            this.panelSubMenuEmpleado.TabIndex = 6;
+            // 
+            // btnInfoMesas
+            // 
+            this.btnInfoMesas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(30)))));
+            this.btnInfoMesas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInfoMesas.FlatAppearance.BorderSize = 0;
+            this.btnInfoMesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfoMesas.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnInfoMesas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnInfoMesas.Location = new System.Drawing.Point(0, 0);
+            this.btnInfoMesas.Name = "btnInfoMesas";
+            this.btnInfoMesas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnInfoMesas.Size = new System.Drawing.Size(250, 38);
+            this.btnInfoMesas.TabIndex = 0;
+            this.btnInfoMesas.Text = "Info de Mesas";
+            this.btnInfoMesas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInfoMesas.UseVisualStyleBackColor = false;
+            this.btnInfoMesas.Click += new System.EventHandler(this.btnInfoMesas_Click);
+            // 
+            // btnFuncionEmpleado
+            // 
+            this.btnFuncionEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnFuncionEmpleado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFuncionEmpleado.FlatAppearance.BorderSize = 0;
+            this.btnFuncionEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuncionEmpleado.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnFuncionEmpleado.Location = new System.Drawing.Point(0, 315);
+            this.btnFuncionEmpleado.Name = "btnFuncionEmpleado";
+            this.btnFuncionEmpleado.Size = new System.Drawing.Size(250, 45);
+            this.btnFuncionEmpleado.TabIndex = 5;
+            this.btnFuncionEmpleado.Text = "Funcion Empleado";
+            this.btnFuncionEmpleado.UseVisualStyleBackColor = false;
+            this.btnFuncionEmpleado.Click += new System.EventHandler(this.btnFuncionEmpleado_Click);
             // 
             // panelSubMenuAdmin
             // 
@@ -96,7 +143,8 @@
             this.btnRemoverEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRemoverEmpleados.FlatAppearance.BorderSize = 0;
             this.btnRemoverEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoverEmpleados.Font = new System.Drawing.Font("Javanese Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRemoverEmpleados.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRemoverEmpleados.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnRemoverEmpleados.Location = new System.Drawing.Point(0, 76);
             this.btnRemoverEmpleados.Name = "btnRemoverEmpleados";
             this.btnRemoverEmpleados.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -105,6 +153,7 @@
             this.btnRemoverEmpleados.Text = "Remover Empleados";
             this.btnRemoverEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRemoverEmpleados.UseVisualStyleBackColor = false;
+            this.btnRemoverEmpleados.Click += new System.EventHandler(this.btnRemoverEmpleados_Click);
             // 
             // btnAgregarEmpleados
             // 
@@ -112,7 +161,8 @@
             this.btnAgregarEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAgregarEmpleados.FlatAppearance.BorderSize = 0;
             this.btnAgregarEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarEmpleados.Font = new System.Drawing.Font("Javanese Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregarEmpleados.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregarEmpleados.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAgregarEmpleados.Location = new System.Drawing.Point(0, 38);
             this.btnAgregarEmpleados.Name = "btnAgregarEmpleados";
             this.btnAgregarEmpleados.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -129,7 +179,8 @@
             this.btnListaEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnListaEmpleados.FlatAppearance.BorderSize = 0;
             this.btnListaEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListaEmpleados.Font = new System.Drawing.Font("Javanese Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnListaEmpleados.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnListaEmpleados.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnListaEmpleados.Location = new System.Drawing.Point(0, 0);
             this.btnListaEmpleados.Name = "btnListaEmpleados";
             this.btnListaEmpleados.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -146,7 +197,7 @@
             this.btnFuncionAdmin.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFuncionAdmin.FlatAppearance.BorderSize = 0;
             this.btnFuncionAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuncionAdmin.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnFuncionAdmin.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnFuncionAdmin.Location = new System.Drawing.Point(0, 151);
             this.btnFuncionAdmin.Name = "btnFuncionAdmin";
             this.btnFuncionAdmin.Size = new System.Drawing.Size(250, 45);
@@ -167,11 +218,8 @@
             // 
             // panelFormularioChico
             // 
-            this.panelFormularioChico.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelFormularioChico.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelFormularioChico.AutoScroll = true;
-            this.panelFormularioChico.Controls.Add(this.btnCerrarMenuPrincipal);
             this.panelFormularioChico.Controls.Add(this.lblWelcome);
             this.panelFormularioChico.Controls.Add(this.btnBarra20);
             this.panelFormularioChico.Controls.Add(this.btnBarra19);
@@ -197,17 +245,17 @@
             this.panelFormularioChico.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panelFormularioChico.Location = new System.Drawing.Point(250, 0);
             this.panelFormularioChico.Name = "panelFormularioChico";
-            this.panelFormularioChico.Size = new System.Drawing.Size(679, 593);
+            this.panelFormularioChico.Size = new System.Drawing.Size(697, 593);
             this.panelFormularioChico.TabIndex = 22;
             // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblWelcome.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblWelcome.ForeColor = System.Drawing.Color.White;
             this.lblWelcome.Location = new System.Drawing.Point(132, 40);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(90, 22);
+            this.lblWelcome.Size = new System.Drawing.Size(97, 24);
             this.lblWelcome.TabIndex = 41;
             this.lblWelcome.Text = "Welcome ";
             // 
@@ -257,7 +305,7 @@
             this.btnBarra17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnBarra17.Location = new System.Drawing.Point(182, 377);
             this.btnBarra17.Name = "btnBarra17";
-            this.btnBarra17.Size = new System.Drawing.Size(97, 38);
+            this.btnBarra17.Size = new System.Drawing.Size(95, 38);
             this.btnBarra17.TabIndex = 37;
             this.btnBarra17.Text = "Barra 2";
             this.btnBarra17.UseVisualStyleBackColor = false;
@@ -268,7 +316,7 @@
             this.btnBarra16.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnBarra16.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBarra16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBarra16.Location = new System.Drawing.Point(54, 377);
+            this.btnBarra16.Location = new System.Drawing.Point(63, 377);
             this.btnBarra16.Name = "btnBarra16";
             this.btnBarra16.Size = new System.Drawing.Size(97, 38);
             this.btnBarra16.TabIndex = 36;
@@ -281,7 +329,7 @@
             this.btnMesa15.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnMesa15.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa15.Location = new System.Drawing.Point(536, 314);
+            this.btnMesa15.Location = new System.Drawing.Point(531, 301);
             this.btnMesa15.Name = "btnMesa15";
             this.btnMesa15.Size = new System.Drawing.Size(96, 38);
             this.btnMesa15.TabIndex = 35;
@@ -294,7 +342,7 @@
             this.btnMesa14.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnMesa14.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa14.Location = new System.Drawing.Point(421, 314);
+            this.btnMesa14.Location = new System.Drawing.Point(410, 301);
             this.btnMesa14.Name = "btnMesa14";
             this.btnMesa14.Size = new System.Drawing.Size(97, 38);
             this.btnMesa14.TabIndex = 34;
@@ -307,7 +355,7 @@
             this.btnMesa13.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnMesa13.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa13.Location = new System.Drawing.Point(298, 314);
+            this.btnMesa13.Location = new System.Drawing.Point(298, 301);
             this.btnMesa13.Name = "btnMesa13";
             this.btnMesa13.Size = new System.Drawing.Size(97, 38);
             this.btnMesa13.TabIndex = 33;
@@ -320,7 +368,7 @@
             this.btnMesa12.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnMesa12.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa12.Location = new System.Drawing.Point(182, 314);
+            this.btnMesa12.Location = new System.Drawing.Point(182, 301);
             this.btnMesa12.Name = "btnMesa12";
             this.btnMesa12.Size = new System.Drawing.Size(95, 38);
             this.btnMesa12.TabIndex = 32;
@@ -333,7 +381,7 @@
             this.btnMesa11.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnMesa11.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa11.Location = new System.Drawing.Point(54, 314);
+            this.btnMesa11.Location = new System.Drawing.Point(63, 301);
             this.btnMesa11.Name = "btnMesa11";
             this.btnMesa11.Size = new System.Drawing.Size(97, 38);
             this.btnMesa11.TabIndex = 31;
@@ -346,7 +394,7 @@
             this.btnMesa10.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnMesa10.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa10.Location = new System.Drawing.Point(536, 241);
+            this.btnMesa10.Location = new System.Drawing.Point(531, 238);
             this.btnMesa10.Name = "btnMesa10";
             this.btnMesa10.Size = new System.Drawing.Size(96, 38);
             this.btnMesa10.TabIndex = 30;
@@ -359,9 +407,9 @@
             this.btnMesa9.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnMesa9.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa9.Location = new System.Drawing.Point(421, 241);
+            this.btnMesa9.Location = new System.Drawing.Point(408, 238);
             this.btnMesa9.Name = "btnMesa9";
-            this.btnMesa9.Size = new System.Drawing.Size(97, 38);
+            this.btnMesa9.Size = new System.Drawing.Size(99, 38);
             this.btnMesa9.TabIndex = 29;
             this.btnMesa9.Text = "Mesa 9";
             this.btnMesa9.UseVisualStyleBackColor = false;
@@ -372,7 +420,7 @@
             this.btnMesa8.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnMesa8.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa8.Location = new System.Drawing.Point(298, 241);
+            this.btnMesa8.Location = new System.Drawing.Point(298, 238);
             this.btnMesa8.Name = "btnMesa8";
             this.btnMesa8.Size = new System.Drawing.Size(97, 38);
             this.btnMesa8.TabIndex = 28;
@@ -385,9 +433,9 @@
             this.btnMesa7.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnMesa7.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa7.Location = new System.Drawing.Point(182, 241);
+            this.btnMesa7.Location = new System.Drawing.Point(182, 238);
             this.btnMesa7.Name = "btnMesa7";
-            this.btnMesa7.Size = new System.Drawing.Size(97, 38);
+            this.btnMesa7.Size = new System.Drawing.Size(95, 38);
             this.btnMesa7.TabIndex = 27;
             this.btnMesa7.Text = "Mesa 7";
             this.btnMesa7.UseVisualStyleBackColor = false;
@@ -398,7 +446,7 @@
             this.btnMesa6.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnMesa6.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa6.Location = new System.Drawing.Point(54, 241);
+            this.btnMesa6.Location = new System.Drawing.Point(63, 238);
             this.btnMesa6.Name = "btnMesa6";
             this.btnMesa6.Size = new System.Drawing.Size(97, 38);
             this.btnMesa6.TabIndex = 26;
@@ -411,7 +459,7 @@
             this.btnMesa5.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnMesa5.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa5.Location = new System.Drawing.Point(536, 181);
+            this.btnMesa5.Location = new System.Drawing.Point(532, 184);
             this.btnMesa5.Name = "btnMesa5";
             this.btnMesa5.Size = new System.Drawing.Size(96, 39);
             this.btnMesa5.TabIndex = 25;
@@ -424,7 +472,7 @@
             this.btnMesa4.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnMesa4.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa4.Location = new System.Drawing.Point(419, 181);
+            this.btnMesa4.Location = new System.Drawing.Point(410, 184);
             this.btnMesa4.Name = "btnMesa4";
             this.btnMesa4.Size = new System.Drawing.Size(99, 39);
             this.btnMesa4.TabIndex = 24;
@@ -437,7 +485,7 @@
             this.btnMesa3.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnMesa3.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa3.Location = new System.Drawing.Point(298, 181);
+            this.btnMesa3.Location = new System.Drawing.Point(298, 184);
             this.btnMesa3.Name = "btnMesa3";
             this.btnMesa3.Size = new System.Drawing.Size(97, 39);
             this.btnMesa3.TabIndex = 23;
@@ -450,7 +498,7 @@
             this.btnMesa2.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnMesa2.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa2.Location = new System.Drawing.Point(182, 181);
+            this.btnMesa2.Location = new System.Drawing.Point(182, 184);
             this.btnMesa2.Name = "btnMesa2";
             this.btnMesa2.Size = new System.Drawing.Size(95, 39);
             this.btnMesa2.TabIndex = 22;
@@ -463,7 +511,7 @@
             this.btnMesa1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnMesa1.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa1.Location = new System.Drawing.Point(54, 181);
+            this.btnMesa1.Location = new System.Drawing.Point(63, 184);
             this.btnMesa1.Name = "btnMesa1";
             this.btnMesa1.Size = new System.Drawing.Size(97, 39);
             this.btnMesa1.TabIndex = 21;
@@ -471,23 +519,14 @@
             this.btnMesa1.UseVisualStyleBackColor = false;
             this.btnMesa1.Click += new System.EventHandler(this.btn_mesas_Click);
             // 
-            // btnCerrarMenuPrincipal
-            // 
-            this.btnCerrarMenuPrincipal.Location = new System.Drawing.Point(563, 44);
-            this.btnCerrarMenuPrincipal.Name = "btnCerrarMenuPrincipal";
-            this.btnCerrarMenuPrincipal.Size = new System.Drawing.Size(75, 44);
-            this.btnCerrarMenuPrincipal.TabIndex = 42;
-            this.btnCerrarMenuPrincipal.Text = "button1";
-            this.btnCerrarMenuPrincipal.UseVisualStyleBackColor = true;
-            this.btnCerrarMenuPrincipal.Click += new System.EventHandler(this.btnCerrarMenuPrincipal_Click);
-            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
-            this.ClientSize = new System.Drawing.Size(926, 593);
+            this.ClientSize = new System.Drawing.Size(944, 593);
             this.Controls.Add(this.panelFormularioChico);
             this.Controls.Add(this.panelMenuIzquierda);
             this.Font = new System.Drawing.Font("Javanese Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -500,6 +539,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
             this.panelMenuIzquierda.ResumeLayout(false);
+            this.panelSubMenuEmpleado.ResumeLayout(false);
             this.panelSubMenuAdmin.ResumeLayout(false);
             this.panelFormularioChico.ResumeLayout(false);
             this.panelFormularioChico.PerformLayout();
@@ -537,6 +577,8 @@
         private System.Windows.Forms.Button btnAgregarEmpleados;
         private System.Windows.Forms.Button btnFuncionAdmin;
         private System.Windows.Forms.Button btnRemoverEmpleados;
-        private System.Windows.Forms.Button btnCerrarMenuPrincipal;
+        private System.Windows.Forms.Panel panelSubMenuEmpleado;
+        private System.Windows.Forms.Button btnInfoMesas;
+        private System.Windows.Forms.Button btnFuncionEmpleado;
     }
 }

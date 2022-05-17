@@ -8,10 +8,9 @@ namespace BarUI
 {
     public partial class FrmMenuPrincipal : Form
     {
-        FrmLogin frmLogin;
         Persona usuarioLogueado;
         Dictionary<int, Button> botones;
-        Dictionary<int, bool> disponibilidadMesas;
+        //Dictionary<int, bool> disponibilidadMesas;
         private Form formActivo = null;
 
         public FrmMenuPrincipal()
@@ -20,14 +19,13 @@ namespace BarUI
             CargarMesas();
             CustomizarDiseño();
         }
-        public FrmMenuPrincipal(Persona usuario,FrmLogin login) : this()
+        public FrmMenuPrincipal(Persona usuario) : this()
         {
             usuarioLogueado = usuario;
-            frmLogin=login;
         }
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
-            ObtenerEstadoMesas();
+            //ObtenerEstadoMesas();
             lblWelcome.Text += usuarioLogueado.Nombre;
             EsAdmin(usuarioLogueado);
         }
@@ -37,6 +35,7 @@ namespace BarUI
             if (usuario.EsAdmin == false)
             {
                 btnFuncionAdmin.Visible = false;
+                btnFuncionEmpleado.Visible = true;
             }
         }
 
@@ -70,19 +69,19 @@ namespace BarUI
         /// Usa el metodo EstadoMesas que devuelve una lista de mesas con ningun producto
         /// Las recorre y segun su value pinta el boton en verde si estan libres y rojas sino
         /// </summary>
-        private void ObtenerEstadoMesas()
-        {
-            disponibilidadMesas = Bar.EstadoMesas();
+        //private void ObtenerEstadoMesas()
+        //{
+        //    disponibilidadMesas = Bar.EstadoMesas();
 
-            foreach (KeyValuePair<int, bool> mesa in disponibilidadMesas)
-            {
-                if (mesa.Value)
-                {
-                    botones[mesa.Key].BackColor = Color.LightGreen;
-                }
-                else { botones[mesa.Key].BackColor = Color.IndianRed; }
-            }
-        }
+        //    foreach (KeyValuePair<int, bool> mesa in disponibilidadMesas)
+        //    {
+        //        if (mesa.Value)
+        //        {
+        //            botones[mesa.Key].BackColor = Color.LightGreen;
+        //        }
+        //        else { botones[mesa.Key].BackColor = Color.IndianRed; }
+        //    }
+        //}
 
         private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -109,7 +108,8 @@ namespace BarUI
 
         private void btnListaEmpleados_Click(object sender, EventArgs e)
         {
-            abrirFormPequeño(new FrmListaEmpleados());
+            bool tipoLista=true;//si es true muestra la lista de empleados
+            abrirFormPequeño(new FrmLista(tipoLista));
             //EsconderSubMenu();
         }
 
@@ -142,12 +142,17 @@ namespace BarUI
         private void CustomizarDiseño()
         {
             panelSubMenuAdmin.Visible = false;
+            panelSubMenuEmpleado.Visible = false;
         }
         private void EsconderSubMenu()
         {
             if (panelSubMenuAdmin.Visible == true)
             {
                 panelSubMenuAdmin.Visible = false;
+            }
+            if(panelSubMenuEmpleado.Visible==true)
+            {
+                panelSubMenuEmpleado.Visible = false;
             }
         }
         private void MostrarSubMenu(Panel subMenu)
@@ -168,12 +173,21 @@ namespace BarUI
             abrirFormPequeño(new FrmAgregarEmpleado());
         }
 
-        private void btnCerrarMenuPrincipal_Click(object sender, EventArgs e)
+        private void btnFuncionEmpleado_Click(object sender, EventArgs e)
         {
-
+            MostrarSubMenu(panelSubMenuEmpleado);
         }
 
+        private void btnInfoMesas_Click(object sender, EventArgs e)
+        {
+            bool tipoLista=false;// si es false muestra la lista de mesas
+            abrirFormPequeño(new FrmLista(tipoLista));
+        }
 
+        private void btnRemoverEmpleados_Click(object sender, EventArgs e)
+        {
+            abrirFormPequeño(new FrmRemoverEmpleado());
 
+        }
     }
 }

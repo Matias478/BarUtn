@@ -33,12 +33,13 @@ namespace BarUI
                 usuario = Bar.ChekearUsuario(nombre, pass, esAdmin);
                 if (usuario is not null)
                 {
-                    FrmMenuPrincipal frmMenu = new FrmMenuPrincipal(usuario,this);
+                    FrmMenuPrincipal frmMenu = new FrmMenuPrincipal(usuario);
                     frmMenu.Show();
                     this.Hide();
                 }else
                 {
                     MessageBox.Show("El usuario ingresado es incorrecto","Error!!!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    //Sonido a a a no dijiste la palabra magica xd!!!!
                 }
             }
         }

@@ -56,19 +56,19 @@ namespace BarLibrary
             mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
             mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
             mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
         }
 
         private static void CargarProductos()
@@ -109,7 +109,7 @@ namespace BarLibrary
 
             for(int i=0;i<mesas.Count;i++)
             {
-                estadoMesas.Add(i,mesas[i].Producto==null);
+                estadoMesas.Add(i, mesas[i].Producto==null);
             }
 
             return estadoMesas;
@@ -151,6 +151,22 @@ namespace BarLibrary
 
             return sb.ToString();
         }
-        
+        public static string MostrarListaMesas()
+        {
+            Mesa auxMesa = null;
+            StringBuilder sb = new StringBuilder();
+            foreach (Mesa item in mesas)
+            {
+                auxMesa = item;
+                sb.AppendLine(auxMesa.ToString());
+            }
+            if (auxMesa is null)
+            {
+                return "Empleado no encontrado";
+            }
+
+            return sb.ToString();
+        }
+
     }
 }

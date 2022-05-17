@@ -32,8 +32,12 @@ namespace BarUI
             else { tipoMesa = "Mesa"; }
             lblNumeroMesa.Text = $"{tipoMesa} N°" + Bar.Mesas[botonPresionado].NumeroMesa.ToString();//$"Numero de mesa " + botonPresionado.ToString();
             lblSaldo.Text = "Saldo: " + Bar.Mesas[botonPresionado].CalcularParcial().ToString();
-            //cmbTipoDePago.DataSource = Enum.GetValues(typeof(EMetodoDePago));
+            cmbTipoDePago.DataSource = Enum.GetValues(typeof(EMetodoDePago));
             CargarProductos();
+
+            cxbConEstacionamiento.Visible = false;
+            cmbTipoDePago.Visible = false;
+            lblMetodoDePago.Visible = false;
         }
 
         private void CargarProductos()
@@ -45,34 +49,54 @@ namespace BarUI
             cmbProducto.Items.Add(Bar.Inventario[4].Nombre);
             cmbProducto.Items.Add(Bar.Inventario[5].Nombre);
             cmbProducto.Items.Add(Bar.Inventario[6].Nombre);
-
-            //Bar.Inventario[0].Cantidad = int.Parse(dupCantidad.Text);
-            //Bar.Inventario[1].Cantidad = int.Parse(dupCantidad.Text);
-            //Bar.Inventario[2].Cantidad = int.Parse(dupCantidad.Text);
-            //Bar.Inventario[3].Cantidad = int.Parse(dupCantidad.Text);
-            //Bar.Inventario[4].Cantidad = int.Parse(dupCantidad.Text);
-            //Bar.Inventario[5].Cantidad = int.Parse(dupCantidad.Text);
-            //Bar.Inventario[6].Cantidad = int.Parse(dupCantidad.Text);
-
         }
 
+        /// <summary>
+        ///  Busca productos en el inventario, si coinciden el nombre elegido con el nombre del producto en la lista
+        ///  se llama al metodo agregar productos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregarProductos_Click(object sender, EventArgs e)
         {
-            string nombre = cmbProducto.Text;
-            int cant = dupCantidad.SelectedIndex;
-            foreach (Producto item in Bar.Inventario)
+            if(string.IsNullOrEmpty(cmbProducto.Text))
             {
-                if(item.Nombre==nombre)
+                MessageBox.Show("Debe elegir un producto!!!","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }else
+            {
+                string nombre = cmbProducto.Text;
+                int cant = dupCantidad.SelectedIndex;
+                foreach (Producto item in Bar.Inventario)
                 {
-                    auxMesa.AgregarProductos(item, cant);
-                    lblSaldo.Text = "Saldo: "+ auxMesa.CalcularParcial().ToString();
+                    if(item.Nombre==nombre)
+                    {
+                        auxMesa.AgregarProductos(item, cant);
+                        lblSaldo.Text = "Saldo: "+ auxMesa.CalcularParcial().ToString();
+                        RefrescarInfo();
+                    }
                 }
             }
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void RefrescarInfo()
+        {
+            cmbProducto.SelectedIndex=-1;
+            dupCantidad.SelectedIndex = 0;
+            cmbTipoDePago.SelectedIndex = -1;
+            cxbConEstacionamiento.Checked = false;
+        }
+         
+        private void btnCerrarMenu_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void btnCerrarCuenta_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
     }
 }

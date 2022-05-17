@@ -10,3 +10,15 @@ C:\Users\RTECH\source\repos\PP.Bar\BarLibrary\obj\Debug\net5.0\BarLibrary.dll
 C:\Users\RTECH\source\repos\PP.Bar\BarLibrary\obj\Debug\net5.0\refint\BarLibrary.dll
 C:\Users\RTECH\source\repos\PP.Bar\BarLibrary\obj\Debug\net5.0\BarLibrary.pdb
 C:\Users\RTECH\source\repos\PP.Bar\BarLibrary\obj\Debug\net5.0\ref\BarLibrary.dll
+C:\Users\RTECH\Desktop\BarUtn\PP.Bar\BarLibrary\bin\Debug\net5.0\BarLibrary.deps.json
+C:\Users\RTECH\Desktop\BarUtn\PP.Bar\BarLibrary\bin\Debug\net5.0\BarLibrary.dll
+C:\Users\RTECH\Desktop\BarUtn\PP.Bar\BarLibrary\bin\Debug\net5.0\BarLibrary.pdb
+C:\Users\RTECH\Desktop\BarUtn\PP.Bar\BarLibrary\obj\Debug\net5.0\BarLibrary.csproj.AssemblyReference.cache
+C:\Users\RTECH\Desktop\BarUtn\PP.Bar\BarLibrary\obj\Debug\net5.0\BarLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RTECH\Desktop\BarUtn\PP.Bar\BarLibrary\obj\Debug\net5.0\BarLibrary.AssemblyInfoInputs.cache
+C:\Users\RTECH\Desktop\BarUtn\PP.Bar\BarLibrary\obj\Debug\net5.0\BarLibrary.AssemblyInfo.cs
+C:\Users\RTECH\Desktop\BarUtn\PP.Bar\BarLibrary\obj\Debug\net5.0\BarLibrary.csproj.CoreCompileInputs.cache
+C:\Users\RTECH\Desktop\BarUtn\PP.Bar\BarLibrary\obj\Debug\net5.0\BarLibrary.dll
+C:\Users\RTECH\Desktop\BarUtn\PP.Bar\BarLibrary\obj\Debug\net5.0\refint\BarLibrary.dll
+C:\Users\RTECH\Desktop\BarUtn\PP.Bar\BarLibrary\obj\Debug\net5.0\BarLibrary.pdb
+C:\Users\RTECH\Desktop\BarUtn\PP.Bar\BarLibrary\obj\Debug\net5.0\ref\BarLibrary.dll

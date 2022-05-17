@@ -83,6 +83,16 @@ namespace BarUI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mesero {
+            get {
+                object obj = ResourceManager.GetObject("Mesero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Restaurante_icono {
             get {
                 object obj = ResourceManager.GetObject("Restaurante icono", resourceCulture);

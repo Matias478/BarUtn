@@ -62,11 +62,23 @@ namespace BarLibrary
             return sb.ToString();
         }
 
+        public Persona FindById(List<Persona> listaUsuarios, Persona p1)
+        {
+            foreach (Persona item in listaUsuarios)
+            {
+                if(item==p1)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
         public static bool operator ==(Persona p1, Persona p2)
         {
-            if(p1 != null && p2 != null)
+            if (p1 is not null && p2 is not null)
             {
-                if(p1.dni==p2.dni)
+                if (p1.id==p2.id)
                 {
                     return true;
                 }
@@ -76,6 +88,36 @@ namespace BarLibrary
         public static bool operator !=(Persona p1, Persona p2)
         {
             return !(p1 == p2);
+        }
+        public static bool operator ==(List<Persona> p1, Persona p2)
+        {
+            if (p1 is not null && p2 is not null)
+            {
+                if (p1.Contains(p2))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public static bool operator !=(List<Persona> p1, Persona p2)
+        {
+            return !(p1 == p2);
+        }
+        public static bool operator ==(Persona p1, int id)
+        {
+            if (p1 is not null && id >0)
+            {
+                if (p1.id == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public static bool operator !=(Persona p1, int id)
+        {
+            return !(p1 == id);
         }
 
     }
