@@ -19,8 +19,8 @@ namespace BarLibrary
         bool contieneALohol;
         ECantMm cantidadMm;
 
-        public Bebidas(string nombre, int cant, float precio,bool conAlcohol, ECantMm cantidadMm) 
-            :base(nombre, cant, precio)
+        public Bebidas(string nombre, int cant,bool conAlcohol, ECantMm cantidadMm) 
+            :base(nombre, cant)
         {
             this.contieneALohol=conAlcohol;
             this.cantidadMm=cantidadMm;

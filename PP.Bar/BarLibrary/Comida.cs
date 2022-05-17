@@ -24,8 +24,8 @@ namespace BarLibrary
     public class Comida : Producto
     {
         List<EIngredientes> eIngredientes;
-        public Comida(string nombre, int cant, float precio, List<EIngredientes> eIngredientes)
-            : base(nombre, cant, precio)
+        public Comida(string nombre, int cant,List<EIngredientes> eIngredientes)
+            : base(nombre, cant)
         {
             this.eIngredientes = eIngredientes;
         }

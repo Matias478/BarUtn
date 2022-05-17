@@ -14,6 +14,7 @@ namespace BarUI
     public partial class FrmMenu : Form
     {
         int botonPresionado;
+        Mesa auxMesa;
         public FrmMenu()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace BarUI
         public FrmMenu(int botonPresionado):this()
         {
             this.botonPresionado = botonPresionado;
+            auxMesa = Bar.Mesas[botonPresionado];
         }
         private void FrmMenu_Load(object sender, EventArgs e)
         {
@@ -29,7 +31,7 @@ namespace BarUI
             { tipoMesa = "Barra"; }
             else { tipoMesa = "Mesa"; }
             lblNumeroMesa.Text = $"{tipoMesa} N°" + Bar.Mesas[botonPresionado].NumeroMesa.ToString();//$"Numero de mesa " + botonPresionado.ToString();
-            lblSaldo.Text = "Saldo: " + Bar.Mesas[botonPresionado].Saldo.ToString();
+            lblSaldo.Text = "Saldo: " + Bar.Mesas[botonPresionado].CalcularParcial().ToString();
             //cmbTipoDePago.DataSource = Enum.GetValues(typeof(EMetodoDePago));
             CargarProductos();
         }
@@ -56,10 +58,21 @@ namespace BarUI
 
         private void btnAgregarProductos_Click(object sender, EventArgs e)
         {
-
-
-
+            string nombre = cmbProducto.Text;
+            int cant = dupCantidad.SelectedIndex;
+            foreach (Producto item in Bar.Inventario)
+            {
+                if(item.Nombre==nombre)
+                {
+                    auxMesa.AgregarProductos(item, cant);
+                    lblSaldo.Text = "Saldo: "+ auxMesa.CalcularParcial().ToString();
+                }
+            }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

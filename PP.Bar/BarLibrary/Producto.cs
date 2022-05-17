@@ -11,12 +11,17 @@ namespace BarLibrary
         protected string nombre;
         protected int cantidad;
         private float precio;
+        static Random rnd;
 
-        protected Producto(string nombre, int cant, float precio)
+        static Producto()
+        {
+            rnd = new Random();
+        }
+        public Producto(string nombre, int cant)
         {
             this.nombre = nombre;
             this.cantidad = cant;
-            this.precio = precio;
+            this.precio = (float)rnd.Next(200,2000);
         }
 
         public float Precio { get { return precio; } }

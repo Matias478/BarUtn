@@ -33,7 +33,7 @@ namespace BarUI
                 usuario = Bar.ChekearUsuario(nombre, pass, esAdmin);
                 if (usuario is not null)
                 {
-                    FrmMenuPrincipal frmMenu = new FrmMenuPrincipal(usuario);
+                    FrmMenuPrincipal frmMenu = new FrmMenuPrincipal(usuario,this);
                     frmMenu.Show();
                     this.Hide();
                 }else

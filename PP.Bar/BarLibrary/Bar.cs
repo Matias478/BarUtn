@@ -38,24 +38,24 @@ namespace BarLibrary
 
             mesas.Add(new Mesa(new List<Producto>()
             {
-            new Comida("Pizza",2,2000,new List<EIngredientes>(){EIngredientes.Queso,EIngredientes.Harina,EIngredientes.Cebolla,EIngredientes.Jamon,EIngredientes.SalsaTomate}),
-            new Bebidas("Coca-Cola",1,1500,false,ECantMm.BotellaLitroMedio),
-            new Bebidas("Cerveza",1,2000,true,ECantMm.BotellaLitro)}, false, EMetodoDePago.TarjetaDeDebito));
+            new Comida("Pizza",2,new List<EIngredientes>(){EIngredientes.Queso,EIngredientes.Harina,EIngredientes.Cebolla,EIngredientes.Jamon,EIngredientes.SalsaTomate}),
+            new Bebidas("Coca-Cola",1,false,ECantMm.BotellaLitroMedio),
+            new Bebidas("Cerveza",1,true,ECantMm.BotellaLitro)}, false, EMetodoDePago.TarjetaDeDebito));
 
             mesas.Add(new Mesa(new List<Producto>()
             {
-            new Comida("Hamburguesa con queso",2,1350,new List<EIngredientes>(){EIngredientes.Queso,EIngredientes.Pan,EIngredientes.CarneRoja}),
-            new Bebidas("Sprite",1,3000,false,ECantMm.BotellaLitroMedio)}, false, EMetodoDePago.Efectivo));
+            new Comida("Hamburguesa con queso",2,new List<EIngredientes>(){EIngredientes.Queso,EIngredientes.Pan,EIngredientes.CarneRoja}),
+            new Bebidas("Sprite",1,false,ECantMm.BotellaLitroMedio)}, false, EMetodoDePago.Efectivo));
 
             mesas.Add(new Mesa(new List<Producto>()
             {
-            new Comida("Tostados",1,600,new List<EIngredientes>(){EIngredientes.Queso,EIngredientes.Pan,EIngredientes.Jamon}),
-            new Bebidas("Jugo de naranja",1,500,false,ECantMm.Vaso500mm)}, true, EMetodoDePago.Efectivo));
+            new Comida("Tostados",1,new List<EIngredientes>(){EIngredientes.Queso,EIngredientes.Pan,EIngredientes.Jamon}),
+            new Bebidas("Jugo de naranja",1,false,ECantMm.Vaso500mm)}, true, EMetodoDePago.Efectivo));
 
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
-            mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
+            mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
             mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
             mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
             mesas.Add(new Mesa(null, false, EMetodoDePago.Inconcluso));
@@ -75,14 +75,14 @@ namespace BarLibrary
         {
             inventario = new List<Producto>
             {
-                new Bebidas("Jugo de naranja", 50, 500, false, ECantMm.Vaso500mm),
-                new Bebidas("Sprite", 110, 3000, false, ECantMm.BotellaLitroMedio),
-                new Bebidas("Cerveza", 130, 2000, true, ECantMm.BotellaLitro),
-                new Bebidas("Coca-Cola", 200, 2000, true, ECantMm.BotellaLitro),
+                new Bebidas("Jugo de naranja", 50, false, ECantMm.Vaso500mm),
+                new Bebidas("Sprite", 110, false, ECantMm.BotellaLitroMedio),
+                new Bebidas("Cerveza", 130, true, ECantMm.BotellaLitro),
+                new Bebidas("Coca-Cola", 200, true, ECantMm.BotellaLitro),
 
-                new Comida("Pizza", 40, 2000, new List<EIngredientes>() { EIngredientes.Queso, EIngredientes.Harina, EIngredientes.Cebolla, EIngredientes.Jamon, EIngredientes.SalsaTomate }),
-                new Comida("Hamburguesa Con queso", 50, 2000, new List<EIngredientes>() { EIngredientes.Queso, EIngredientes.Harina, EIngredientes.Cebolla, EIngredientes.Jamon, EIngredientes.SalsaTomate }),
-                new Comida("Tostados", 100, 2000, new List<EIngredientes>() { EIngredientes.Queso, EIngredientes.Pan, EIngredientes.Jamon })
+                new Comida("Pizza", 40, new List<EIngredientes>() { EIngredientes.Queso, EIngredientes.Harina, EIngredientes.Cebolla, EIngredientes.Jamon, EIngredientes.SalsaTomate }),
+                new Comida("Hamburguesa Con queso", 50, new List<EIngredientes>() { EIngredientes.Queso, EIngredientes.Harina, EIngredientes.Cebolla, EIngredientes.Jamon, EIngredientes.SalsaTomate }),
+                new Comida("Tostados", 100, new List<EIngredientes>() { EIngredientes.Queso, EIngredientes.Pan, EIngredientes.Jamon })
             };
         }
 
@@ -108,8 +108,8 @@ namespace BarLibrary
             Dictionary<int, bool> estadoMesas = new Dictionary<int, bool>();
 
             for(int i=0;i<mesas.Count;i++)
-            { 
-                estadoMesas.Add(i+1,mesas[i].Producto==null);
+            {
+                estadoMesas.Add(i,mesas[i].Producto==null);
             }
 
             return estadoMesas;

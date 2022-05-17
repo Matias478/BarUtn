@@ -35,12 +35,15 @@
             // 
             // rtbListaEmpleados
             // 
+            this.rtbListaEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbListaEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(47)))));
             this.rtbListaEmpleados.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rtbListaEmpleados.ForeColor = System.Drawing.Color.White;
             this.rtbListaEmpleados.Location = new System.Drawing.Point(125, 10);
             this.rtbListaEmpleados.Name = "rtbListaEmpleados";
-            this.rtbListaEmpleados.Size = new System.Drawing.Size(521, 578);
+            this.rtbListaEmpleados.Size = new System.Drawing.Size(528, 567);
             this.rtbListaEmpleados.TabIndex = 0;
             this.rtbListaEmpleados.Text = "";
             // 
@@ -63,9 +66,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
-            this.ClientSize = new System.Drawing.Size(712, 600);
+            this.ClientSize = new System.Drawing.Size(679, 593);
             this.Controls.Add(this.btnCerrarFrmListaEmpleados);
             this.Controls.Add(this.rtbListaEmpleados);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmListaEmpleados";
             this.Text = "FrmListaEmpleados";

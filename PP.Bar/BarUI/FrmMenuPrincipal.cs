@@ -1,18 +1,14 @@
-﻿using System;
+﻿using BarLibrary;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BarLibrary;
 
 namespace BarUI
 {
     public partial class FrmMenuPrincipal : Form
     {
+        FrmLogin frmLogin;
         Persona usuarioLogueado;
         Dictionary<int, Button> botones;
         Dictionary<int, bool> disponibilidadMesas;
@@ -24,9 +20,10 @@ namespace BarUI
             CargarMesas();
             CustomizarDiseño();
         }
-        public FrmMenuPrincipal(Persona usuario) : this()
+        public FrmMenuPrincipal(Persona usuario,FrmLogin login) : this()
         {
             usuarioLogueado = usuario;
+            frmLogin=login;
         }
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
@@ -37,9 +34,9 @@ namespace BarUI
 
         private void EsAdmin(Persona usuario)
         {
-            if(usuario.EsAdmin==false)
+            if (usuario.EsAdmin == false)
             {
-                btnListaEmpleados.Visible=false;
+                btnFuncionAdmin.Visible = false;
             }
         }
 
@@ -47,26 +44,26 @@ namespace BarUI
         {
             botones = new Dictionary<int, Button>();
 
-            botones.Add(1, btnMesa1);
-            botones.Add(2, btnMesa2);
-            botones.Add(3, btnMesa3);
-            botones.Add(4, btnMesa4);
-            botones.Add(5, btnMesa5);
-            botones.Add(6, btnMesa6);
-            botones.Add(7, btnMesa7);
-            botones.Add(8, btnMesa8);
-            botones.Add(9, btnMesa9);
-            botones.Add(10, btnMesa10);
-            botones.Add(11, btnMesa11);
-            botones.Add(12, btnMesa12);
-            botones.Add(13, btnMesa13);
-            botones.Add(14, btnMesa14);
-            botones.Add(15, btnMesa15);
-            botones.Add(16, btnBarra16);
-            botones.Add(17, btnBarra17);
-            botones.Add(18, btnBarra18);
-            botones.Add(19, btnBarra19);
-            botones.Add(20, btnBarra20);
+            botones.Add(0, btnMesa1);
+            botones.Add(1, btnMesa2);
+            botones.Add(2, btnMesa3);
+            botones.Add(3, btnMesa4);
+            botones.Add(4, btnMesa5);
+            botones.Add(5, btnMesa6);
+            botones.Add(6, btnMesa7);
+            botones.Add(7, btnMesa8);
+            botones.Add(8, btnMesa9);
+            botones.Add(9, btnMesa10);
+            botones.Add(10, btnMesa11);
+            botones.Add(11, btnMesa12);
+            botones.Add(12, btnMesa13);
+            botones.Add(13, btnMesa14);
+            botones.Add(14, btnMesa15);
+            botones.Add(15, btnBarra16);
+            botones.Add(16, btnBarra17);
+            botones.Add(17, btnBarra18);
+            botones.Add(18, btnBarra19);
+            botones.Add(19, btnBarra20);
         }
 
         /// <summary>
@@ -89,13 +86,12 @@ namespace BarUI
 
         private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Seguro que quiere Salir?", " Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Seguro que desea salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                Application.Exit();
+               Application.Exit();
             }
-            else
-                e.Cancel = true;
         }
+            
 
         private void btn_mesas_Click(object sender, EventArgs e)
         {
@@ -105,8 +101,8 @@ namespace BarUI
             {
                 if (item.Value == auxBtn)
                 {
-                    MessageBox.Show(Bar.MostrarMesa(item.Key));
-                    //abrirFormPequeño(new FrmMenu());
+                    //MessageBox.Show(Bar.MostrarMesa(item.Key));
+                    abrirFormPequeño(new FrmMenu(item.Key));
                 }
             }
         }
@@ -123,13 +119,13 @@ namespace BarUI
         /// <param name="childForm"></param>
         private void abrirFormPequeño(Form childForm)
         {
-            if(formActivo!=null)
+            if (formActivo != null)
             {
                 formActivo.Close();
             }
             formActivo = childForm;
             childForm.TopLevel = false;
-            childForm.FormBorderStyle=FormBorderStyle.None;
+            childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
             panelFormularioChico.Controls.Add(childForm);
             panelFormularioChico.Tag = childForm;
@@ -142,13 +138,14 @@ namespace BarUI
             MostrarSubMenu(panelSubMenuAdmin);
         }
 
+        #region SubMenu
         private void CustomizarDiseño()
         {
             panelSubMenuAdmin.Visible = false;
         }
         private void EsconderSubMenu()
         {
-            if(panelSubMenuAdmin.Visible==true)
+            if (panelSubMenuAdmin.Visible == true)
             {
                 panelSubMenuAdmin.Visible = false;
             }
@@ -163,6 +160,19 @@ namespace BarUI
             else
                 subMenu.Visible = false;
         }
+
+        #endregion
+
+        private void btnAgregarEmpleados_Click(object sender, EventArgs e)
+        {
+            abrirFormPequeño(new FrmAgregarEmpleado());
+        }
+
+        private void btnCerrarMenuPrincipal_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
     }

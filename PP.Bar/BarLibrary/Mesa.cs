@@ -26,9 +26,9 @@ namespace BarLibrary
 
         static Mesa()
         {
-            ultimoNumeroMesa = 0;
+            ultimoNumeroMesa = 1;
         }
-        public Mesa()
+        private Mesa()
         {
             numeroMesa = ultimoNumeroMesa;
             producto = new List<Producto>();
@@ -38,10 +38,11 @@ namespace BarLibrary
         public Mesa(List<Producto> pedido, bool estacionamiento, EMetodoDePago meteodoDePagos) 
             : this()
         {
+            //producto = new List<Producto>();
             conEstacionamiento = estacionamiento;
             metodoDePago = meteodoDePagos;
             producto = pedido;
-            saldo = CalcularCosto(pedido);
+            Saldo = CalcularTotal(pedido);
         }
 
         public int NumeroMesa { get { return numeroMesa; } }
@@ -49,7 +50,7 @@ namespace BarLibrary
         public static bool ConEstacionamiento { get { return conEstacionamiento; } }
         public static EMetodoDePago MetodoDePago { get { return metodoDePago; } }
         public bool EsBarra { get { return numeroMesa > 15; } }
-        public float Saldo { get { return saldo; } }
+        public float Saldo { get { return saldo; } set { saldo = value; } }
         public override string ToString()
         {
             string tipoMesa;
@@ -64,13 +65,33 @@ namespace BarLibrary
             return sb.ToString();
         }
 
+        public void AgregarProductos(Producto productoRecibido,int cant)
+        {
+            if(productoRecibido is not null)
+            {
+                producto.Add(productoRecibido);
+                productoRecibido.Cantidad -= cant;
+                
+            }
+        }
+        public float CalcularParcial()
+        {
+            float costo = 0;
+            foreach (Producto item in producto)
+            {
+                costo += item.Precio;
+            }
+            return costo;
+        }
+        
+
         /// <summary>
         /// Calcula el costo de la cuenta de la mesa y hace un recargo si uso el estacionamiento
         /// O pago con un metodo distinto a efectivo
         /// </summary>
         /// <param name="pedido"></param>
         /// <returns></returns>
-        private float CalcularCosto(List<Producto> pedido)
+        private float CalcularTotal(List<Producto> pedido)
         {
             float costo=0;
             if(pedido is not null)
@@ -103,7 +124,7 @@ namespace BarLibrary
             return costo; 
         }
 
-
+        
 
     }
 }

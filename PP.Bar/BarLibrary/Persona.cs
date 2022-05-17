@@ -11,6 +11,8 @@ namespace BarLibrary
         static int lastId;
         int id;
         string nombre;
+        string apellido;
+        float sueldo;
         Random rnd;
         int dni;
         bool esAdmin;
@@ -20,13 +22,15 @@ namespace BarLibrary
         {
             lastId = 1;
         }
-        Persona(string nombre,string pass)
+        Persona(string nombre,string pass, string apellido,float sueldo)
         {
             this.nombre = nombre;
             this.pass = pass;
+            this.apellido = apellido;
+            this.sueldo = sueldo;
             rnd = new Random();
         }
-        public Persona(string nombre, string pass,bool esAdmin):this(nombre,pass)
+        public Persona(string nombre,string apellido ,float sueldo, string pass,bool esAdmin):this(nombre,pass,apellido,sueldo)
         {
             this.id = lastId;
             this.esAdmin = esAdmin;

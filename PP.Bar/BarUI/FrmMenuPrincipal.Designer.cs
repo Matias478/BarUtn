@@ -58,6 +58,7 @@
             this.btnMesa3 = new System.Windows.Forms.Button();
             this.btnMesa2 = new System.Windows.Forms.Button();
             this.btnMesa1 = new System.Windows.Forms.Button();
+            this.btnCerrarMenuPrincipal = new System.Windows.Forms.Button();
             this.panelMenuIzquierda.SuspendLayout();
             this.panelSubMenuAdmin.SuspendLayout();
             this.panelFormularioChico.SuspendLayout();
@@ -74,7 +75,7 @@
             this.panelMenuIzquierda.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panelMenuIzquierda.Location = new System.Drawing.Point(0, 0);
             this.panelMenuIzquierda.Name = "panelMenuIzquierda";
-            this.panelMenuIzquierda.Size = new System.Drawing.Size(250, 605);
+            this.panelMenuIzquierda.Size = new System.Drawing.Size(250, 593);
             this.panelMenuIzquierda.TabIndex = 21;
             // 
             // panelSubMenuAdmin
@@ -120,6 +121,7 @@
             this.btnAgregarEmpleados.Text = "Agregar Empleados";
             this.btnAgregarEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarEmpleados.UseVisualStyleBackColor = false;
+            this.btnAgregarEmpleados.Click += new System.EventHandler(this.btnAgregarEmpleados_Click);
             // 
             // btnListaEmpleados
             // 
@@ -165,6 +167,11 @@
             // 
             // panelFormularioChico
             // 
+            this.panelFormularioChico.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelFormularioChico.AutoScroll = true;
+            this.panelFormularioChico.Controls.Add(this.btnCerrarMenuPrincipal);
             this.panelFormularioChico.Controls.Add(this.lblWelcome);
             this.panelFormularioChico.Controls.Add(this.btnBarra20);
             this.panelFormularioChico.Controls.Add(this.btnBarra19);
@@ -186,12 +193,11 @@
             this.panelFormularioChico.Controls.Add(this.btnMesa3);
             this.panelFormularioChico.Controls.Add(this.btnMesa2);
             this.panelFormularioChico.Controls.Add(this.btnMesa1);
-            this.panelFormularioChico.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormularioChico.Font = new System.Drawing.Font("Javanese Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panelFormularioChico.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panelFormularioChico.Location = new System.Drawing.Point(250, 0);
             this.panelFormularioChico.Name = "panelFormularioChico";
-            this.panelFormularioChico.Size = new System.Drawing.Size(697, 605);
+            this.panelFormularioChico.Size = new System.Drawing.Size(679, 593);
             this.panelFormularioChico.TabIndex = 22;
             // 
             // lblWelcome
@@ -465,13 +471,23 @@
             this.btnMesa1.UseVisualStyleBackColor = false;
             this.btnMesa1.Click += new System.EventHandler(this.btn_mesas_Click);
             // 
+            // btnCerrarMenuPrincipal
+            // 
+            this.btnCerrarMenuPrincipal.Location = new System.Drawing.Point(563, 44);
+            this.btnCerrarMenuPrincipal.Name = "btnCerrarMenuPrincipal";
+            this.btnCerrarMenuPrincipal.Size = new System.Drawing.Size(75, 44);
+            this.btnCerrarMenuPrincipal.TabIndex = 42;
+            this.btnCerrarMenuPrincipal.Text = "button1";
+            this.btnCerrarMenuPrincipal.UseVisualStyleBackColor = true;
+            this.btnCerrarMenuPrincipal.Click += new System.EventHandler(this.btnCerrarMenuPrincipal_Click);
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
-            this.ClientSize = new System.Drawing.Size(947, 605);
+            this.ClientSize = new System.Drawing.Size(926, 593);
             this.Controls.Add(this.panelFormularioChico);
             this.Controls.Add(this.panelMenuIzquierda);
             this.Font = new System.Drawing.Font("Javanese Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -521,5 +537,6 @@
         private System.Windows.Forms.Button btnAgregarEmpleados;
         private System.Windows.Forms.Button btnFuncionAdmin;
         private System.Windows.Forms.Button btnRemoverEmpleados;
+        private System.Windows.Forms.Button btnCerrarMenuPrincipal;
     }
 }
