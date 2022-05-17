@@ -1,0 +1,93 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0-windows7.0": {
+      "BarLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/BarLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BarLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BarLibrary/1.0.0": {
+      "type": "project",
+      "path": "../BarLibrary/BarLibrary.csproj",
+      "msbuildProject": "../BarLibrary/BarLibrary.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0-windows7.0": [
+      "BarLibrary >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\RTECH\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\RTECH\\source\\repos\\PP.Bar\\BarUI\\BarUI.csproj",
+      "projectName": "BarUI",
+      "projectPath": "C:\\Users\\RTECH\\source\\repos\\PP.Bar\\BarUI\\BarUI.csproj",
+      "packagesPath": "C:\\Users\\RTECH\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\RTECH\\source\\repos\\PP.Bar\\BarUI\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\RTECH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0-windows7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "projectReferences": {
+            "C:\\Users\\RTECH\\source\\repos\\PP.Bar\\BarLibrary\\BarLibrary.csproj": {
+              "projectPath": "C:\\Users\\RTECH\\source\\repos\\PP.Bar\\BarLibrary\\BarLibrary.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0-windows7.0": {
+        "targetAlias": "net5.0-windows",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

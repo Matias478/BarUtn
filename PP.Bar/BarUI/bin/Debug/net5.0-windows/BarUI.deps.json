@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "BarUI/1.0.0": {
+        "dependencies": {
+          "BarLibrary": "1.0.0"
+        },
+        "runtime": {
+          "BarUI.dll": {}
+        }
+      },
+      "BarLibrary/1.0.0": {
+        "runtime": {
+          "BarLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BarUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BarLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
