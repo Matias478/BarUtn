@@ -121,13 +121,34 @@
   <data name="icono" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Restaurante icono" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Restaurante icono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Bar 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bar 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Mesero" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Mesero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Restaurante icono" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Restaurante icono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Menu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sonido" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sonido.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RuidoAmbiente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RuidoAmbiente.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ServiceRing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServiceRing.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WrongAnswer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WrongAnswer.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Administrador" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Administrador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="meseros" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\meseros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="correct-6033" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\correct-6033.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

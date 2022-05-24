@@ -21,8 +21,8 @@ namespace BarLibrary
         float saldo;
         bool conEstacionamiento;
         EMetodoDePago metodoDePago;
-        //Dictionary<int, int> pedidos;
         List<Producto> producto;
+        Dictionary<Producto, int> pedidos;
 
         static Mesa()
         {
@@ -32,23 +32,23 @@ namespace BarLibrary
         {
             numeroMesa = ultimoNumeroMesa;
             producto = new List<Producto>();
-            //pedidos = new Dictionary<int, int>();
+            pedidos=new Dictionary<Producto, int>();
             ultimoNumeroMesa++;
         }
         public Mesa(List<Producto> pedido, bool estacionamiento, EMetodoDePago meteodoDePagos) 
             : this()
         {
-            //producto = new List<Producto>();
             conEstacionamiento = estacionamiento;
             metodoDePago = meteodoDePagos;
             producto = pedido;
-            Saldo = CalcularTotal(pedido);
+            Saldo = 0;
         }
 
         public int NumeroMesa { get { return numeroMesa; } }
-        public List<Producto> Producto{ get { return producto; } }
-        public bool ConEstacionamiento { get { return conEstacionamiento; } }
-        public EMetodoDePago MetodoDePago { get { return metodoDePago; } }
+        public List<Producto> Producto{ get { return producto; } set { producto = value; } }
+        public Dictionary<Producto,int> Pedidos { get { return pedidos; }  set { pedidos = CargarProductosEnPedidos(); } }
+        public bool ConEstacionamiento { get { return conEstacionamiento; } set { conEstacionamiento = value; } }
+        public EMetodoDePago MetodoDePago { get { return metodoDePago; } set { metodoDePago = value; } }
         public bool EsBarra { get { return numeroMesa > 15; } }
         public float Saldo { get { return saldo; } set { saldo = value; } }
         public override string ToString()
@@ -57,10 +57,15 @@ namespace BarLibrary
             if(EsBarra==true)
             { tipoMesa = "Barra"; }
             else { tipoMesa = "Mesa"; }
-                
+            
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Numero de {tipoMesa}: {NumeroMesa}");
-            sb.AppendLine($"Saldo: {Saldo}");
+            sb.AppendLine($"Saldo: {Saldo=CalcularTotal()}");
+            sb.AppendLine($"Productos Pedidos: ");
+            foreach(KeyValuePair<Producto,int> item in pedidos)
+            {
+                sb.AppendLine($"{item.Key.Nombre}  {item.Value} unidad/es");
+            }
             if(conEstacionamiento==true)
             {
                 sb.AppendLine($"Con estacionamiento");
@@ -69,7 +74,15 @@ namespace BarLibrary
 
             return sb.ToString();
         }
-
+        private Dictionary<Producto,int> CargarProductosEnPedidos()
+        {
+            foreach (Producto item in Producto)
+            {
+                pedidos.Add(item, item.Cantidad);
+                return pedidos;
+            }
+            return null;    
+        }
         /// <summary>
         /// Agrega el producto recibido a la lista de la mesa y reduce la cantidad del mismo 
         /// </summary>
@@ -81,55 +94,59 @@ namespace BarLibrary
             {
                 producto.Add(productoRecibido);
                 productoRecibido.Cantidad -= cant;
+                pedidos.Add(productoRecibido, cant);
             }
         }
+
+        /// <summary>
+        /// Instancia la lista de productos de una mesa
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public void InstanciarLista(int id)
+        {
+            if (NumeroMesa == id)
+            {
+                Producto = new List<Producto>();
+            }
+        }
+
+        /// <summary>
+        /// Calcula el costo de los productos, sin agregarle los recargos
+        /// </summary>
+        /// <returns></returns>
         public float CalcularParcial()
         {
             float costo = 0;
-            foreach (Producto item in producto)
+            foreach (KeyValuePair<Producto, int> item in pedidos)
             {
-                costo += item.Precio;
+                costo += item.Key.Precio * item.Value;
             }
             return costo;
         }
-        
-
+     
         /// <summary>
         /// Calcula el costo de la cuenta de la mesa y hace un recargo si uso el estacionamiento
         /// O pago con un metodo distinto a efectivo
         /// </summary>
         /// <param name="pedido"></param>
         /// <returns></returns>
-        private float CalcularTotal(List<Producto> pedido)
+        public float CalcularTotal(/*List<Producto> pedido*/)
         {
-            float costo=0;
-            if(pedido is not null)
+            float costo = CalcularParcial();    
+
+            if(costo>0)
             {
-                foreach (Producto item in pedido)
-                {
-                    costo += item.Precio;
-                }
-                //for (int i = 0; i < pedido.Count; i++)
-                //{
-                //    costo += pedido[i].Items[i].Precio;
-                //}
-                if (ConEstacionamiento == true)
-                {
-                    costo += 100;
-                }
-                switch (MetodoDePago)
-                {
-                    case EMetodoDePago.TarjetaDeCredito:
-                        costo += 150;
-                        break;
-                    case EMetodoDePago.MercadoPago:
-                        costo += 80;
-                        break;
-                    case EMetodoDePago.TarjetaDeDebito:
-                        costo += 120;
-                        break;
-                }
+                   if (ConEstacionamiento == true)
+                    {
+                        costo += 100;
+                    } 
+                    if(MetodoDePago==EMetodoDePago.TarjetaDeCredito)
+                    {
+                        costo += (costo*10/100);
+                    }
             }
+            
             return costo; 
         }
 

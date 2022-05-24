@@ -21,6 +21,9 @@ namespace BarLibrary
         static public List<Persona> ListaUsuarios { get { return listaUsuarios; } }
         static public List<Producto> Inventario { get { return inventario; } }
 
+        /// <summary>
+        /// Añade personas a la lista de personas
+        /// </summary>
         static private void CargaEmpleados()
         {
             listaUsuarios = new List<Persona>();
@@ -31,26 +34,29 @@ namespace BarLibrary
             ListaUsuarios.Add(new Persona("Ramos","Puto",70040, "Urulogog", false));
             ListaUsuarios.Add(new Persona("Lucas","Lauriente",120000, "datnetcom", true));
         }
-
+        /// <summary>
+        /// Añade mesas a la lista de mesas
+        /// </summary>
         private static void CargaMesas()
         {
             mesas = new List<Mesa>(20);
+            Mesa mesa1 = new Mesa(new List<Producto>(), true, EMetodoDePago.Efectivo);
+            Mesa mesa2 = new Mesa(new List<Producto>(), false, EMetodoDePago.Efectivo);
+            Mesa mesa3 = new Mesa(new List<Producto>(), true, EMetodoDePago.TarjetaDeCredito);
 
-            mesas.Add(new Mesa(new List<Producto>()
-            {
-            new Comida("Pizza",2,new List<EIngredientes>(){EIngredientes.Queso,EIngredientes.Harina,EIngredientes.Cebolla,EIngredientes.Jamon,EIngredientes.SalsaTomate}),
-            new Bebidas("Coca-Cola",1,false,ECantMm.BotellaLitroMedio),
-            new Bebidas("Cerveza",1,true,ECantMm.BotellaLitro)}, false, EMetodoDePago.TarjetaDeDebito));
 
-            mesas.Add(new Mesa(new List<Producto>()
-            {
-            new Comida("Hamburguesa con queso",2,new List<EIngredientes>(){EIngredientes.Queso,EIngredientes.Pan,EIngredientes.CarneRoja}),
-            new Bebidas("Sprite",1,false,ECantMm.BotellaLitroMedio)}, false, EMetodoDePago.Efectivo));
+            mesa1.AgregarProductos(new Comida("Pizza", 2, new List<EIngredientes>() { EIngredientes.Queso, EIngredientes.Harina, EIngredientes.Cebolla, EIngredientes.Jamon, EIngredientes.SalsaTomate }), 2);
+            mesa1.AgregarProductos(new Bebidas("Coca-Cola", 1, false, ECantMm.BotellaLitroMedio),1);
+            mesa1.AgregarProductos(new Bebidas("Cerveza",1,true,ECantMm.BotellaLitro),1);
+            mesas.Add(mesa1);
 
-            mesas.Add(new Mesa(new List<Producto>()
-            {
-            new Comida("Tostados",1,new List<EIngredientes>(){EIngredientes.Queso,EIngredientes.Pan,EIngredientes.Jamon}),
-            new Bebidas("Jugo de naranja",1,false,ECantMm.Vaso500mm)}, true, EMetodoDePago.Efectivo));
+            mesa2.AgregarProductos(new Comida("Hamburguesa con queso", 2, new List<EIngredientes>() { EIngredientes.Queso, EIngredientes.Pan, EIngredientes.CarneRoja }),2);
+            mesa2.AgregarProductos(new Bebidas("Sprite", 1, false, ECantMm.BotellaLitroMedio),1);
+            mesas.Add(mesa2);
+
+            mesa3.AgregarProductos(new Comida("Tostados", 1, new List<EIngredientes>() { EIngredientes.Queso, EIngredientes.Pan, EIngredientes.Jamon }), 1);
+            mesa3.AgregarProductos(new Bebidas("Jugo de naranja", 1, false, ECantMm.Vaso500mm),1);
+            mesas.Add(mesa3);
 
             mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
             mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
@@ -70,7 +76,9 @@ namespace BarLibrary
             mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
             mesas.Add(new Mesa(new List<Producto>(), false, EMetodoDePago.Inconcluso));
         }
-
+        /// <summary>
+        /// Añade un producto a la lista de productos
+        /// </summary>
         private static void CargarProductos()
         {
             inventario = new List<Producto>
@@ -85,8 +93,14 @@ namespace BarLibrary
                 new Comida("Tostados", 100, new List<EIngredientes>() { EIngredientes.Queso, EIngredientes.Pan, EIngredientes.Jamon })
             };
         }
-
-        static public Persona ChekearUsuario(string nombre, string pass, bool esAdmin)
+        /// <summary>
+        /// Llama al checkear usuario de la clase persona y si coincide los parametros a los de la lista retorna la persona
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="pass"></param>
+        /// <param name="esAdmin"></param>
+        /// <returns></returns>
+        static public Persona CheckearUsuario(string nombre, string pass, bool esAdmin)
         {
             foreach (Persona item in listaUsuarios)
             {
@@ -109,31 +123,11 @@ namespace BarLibrary
 
             for(int i=0;i<mesas.Count;i++)
             {
-                estadoMesas.Add(i, mesas[i].Producto==null);
+                estadoMesas.Add(i, mesas[i].Pedidos.Count==0);
             }
-
             return estadoMesas;
         }
 
-        public static string MostrarMesa(int idMesa)
-        {
-            Mesa auxMesa = null;
-            foreach (Mesa item in mesas)
-            {
-                if (item.NumeroMesa == idMesa)
-                {
-                    auxMesa = item;
-                    return auxMesa.ToString();
-                } 
-            }
-
-            if (auxMesa is null)
-            {
-                return "mesa no encontrada";
-            }
-
-            return auxMesa.ToString();
-        }
 
         public static string MostrarEmpleados()
         {
@@ -153,16 +147,21 @@ namespace BarLibrary
         }
         public static string MostrarListaMesas()
         {
-            Mesa auxMesa = null;
             StringBuilder sb = new StringBuilder();
             foreach (Mesa item in mesas)
             {
-                auxMesa = item;
-                sb.AppendLine(auxMesa.ToString());
+                sb.AppendLine(item.ToString());
             }
-            if (auxMesa is null)
+
+            return sb.ToString();
+        }
+
+        public static string MostrarInventario()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (Producto item in inventario)
             {
-                return "Empleado no encontrado";
+                sb.AppendLine(item.ToString());
             }
 
             return sb.ToString();

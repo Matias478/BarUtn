@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             this.panelMenuIzquierda = new System.Windows.Forms.Panel();
+            this.panelSubMenuInventario = new System.Windows.Forms.Panel();
+            this.btnAgregarProductos = new System.Windows.Forms.Button();
+            this.btnInfoInventario = new System.Windows.Forms.Button();
+            this.btnInventario = new System.Windows.Forms.Button();
             this.panelSubMenuEmpleado = new System.Windows.Forms.Panel();
             this.btnInfoMesas = new System.Windows.Forms.Button();
             this.btnFuncionEmpleado = new System.Windows.Forms.Button();
@@ -62,6 +66,7 @@
             this.btnMesa2 = new System.Windows.Forms.Button();
             this.btnMesa1 = new System.Windows.Forms.Button();
             this.panelMenuIzquierda.SuspendLayout();
+            this.panelSubMenuInventario.SuspendLayout();
             this.panelSubMenuEmpleado.SuspendLayout();
             this.panelSubMenuAdmin.SuspendLayout();
             this.panelFormularioChico.SuspendLayout();
@@ -71,6 +76,8 @@
             // 
             this.panelMenuIzquierda.AutoScroll = true;
             this.panelMenuIzquierda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelMenuIzquierda.Controls.Add(this.panelSubMenuInventario);
+            this.panelMenuIzquierda.Controls.Add(this.btnInventario);
             this.panelMenuIzquierda.Controls.Add(this.panelSubMenuEmpleado);
             this.panelMenuIzquierda.Controls.Add(this.btnFuncionEmpleado);
             this.panelMenuIzquierda.Controls.Add(this.panelSubMenuAdmin);
@@ -83,18 +90,81 @@
             this.panelMenuIzquierda.Size = new System.Drawing.Size(250, 593);
             this.panelMenuIzquierda.TabIndex = 21;
             // 
+            // panelSubMenuInventario
+            // 
+            this.panelSubMenuInventario.Controls.Add(this.btnAgregarProductos);
+            this.panelSubMenuInventario.Controls.Add(this.btnInfoInventario);
+            this.panelSubMenuInventario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenuInventario.Location = new System.Drawing.Point(0, 450);
+            this.panelSubMenuInventario.Name = "panelSubMenuInventario";
+            this.panelSubMenuInventario.Size = new System.Drawing.Size(250, 83);
+            this.panelSubMenuInventario.TabIndex = 8;
+            // 
+            // btnAgregarProductos
+            // 
+            this.btnAgregarProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(30)))));
+            this.btnAgregarProductos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarProductos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAgregarProductos.FlatAppearance.BorderSize = 0;
+            this.btnAgregarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarProductos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregarProductos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAgregarProductos.Location = new System.Drawing.Point(0, 38);
+            this.btnAgregarProductos.Name = "btnAgregarProductos";
+            this.btnAgregarProductos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAgregarProductos.Size = new System.Drawing.Size(250, 38);
+            this.btnAgregarProductos.TabIndex = 9;
+            this.btnAgregarProductos.Text = "Agregar Productos";
+            this.btnAgregarProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarProductos.UseVisualStyleBackColor = false;
+            this.btnAgregarProductos.Click += new System.EventHandler(this.btnAgregarProductos_Click);
+            // 
+            // btnInfoInventario
+            // 
+            this.btnInfoInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(30)))));
+            this.btnInfoInventario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInfoInventario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInfoInventario.FlatAppearance.BorderSize = 0;
+            this.btnInfoInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfoInventario.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnInfoInventario.Location = new System.Drawing.Point(0, 0);
+            this.btnInfoInventario.Name = "btnInfoInventario";
+            this.btnInfoInventario.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnInfoInventario.Size = new System.Drawing.Size(250, 38);
+            this.btnInfoInventario.TabIndex = 8;
+            this.btnInfoInventario.Text = "Info Inventario";
+            this.btnInfoInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInfoInventario.UseVisualStyleBackColor = false;
+            this.btnInfoInventario.Click += new System.EventHandler(this.btnInfoInventario_Click);
+            // 
+            // btnInventario
+            // 
+            this.btnInventario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInventario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInventario.FlatAppearance.BorderSize = 0;
+            this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventario.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnInventario.Location = new System.Drawing.Point(0, 405);
+            this.btnInventario.Name = "btnInventario";
+            this.btnInventario.Size = new System.Drawing.Size(250, 45);
+            this.btnInventario.TabIndex = 7;
+            this.btnInventario.Text = "Inventario";
+            this.btnInventario.UseVisualStyleBackColor = true;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
+            // 
             // panelSubMenuEmpleado
             // 
             this.panelSubMenuEmpleado.Controls.Add(this.btnInfoMesas);
             this.panelSubMenuEmpleado.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuEmpleado.Location = new System.Drawing.Point(0, 360);
             this.panelSubMenuEmpleado.Name = "panelSubMenuEmpleado";
-            this.panelSubMenuEmpleado.Size = new System.Drawing.Size(250, 100);
+            this.panelSubMenuEmpleado.Size = new System.Drawing.Size(250, 45);
             this.panelSubMenuEmpleado.TabIndex = 6;
             // 
             // btnInfoMesas
             // 
             this.btnInfoMesas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(30)))));
+            this.btnInfoMesas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInfoMesas.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInfoMesas.FlatAppearance.BorderSize = 0;
             this.btnInfoMesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -113,6 +183,7 @@
             // btnFuncionEmpleado
             // 
             this.btnFuncionEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnFuncionEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFuncionEmpleado.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFuncionEmpleado.FlatAppearance.BorderSize = 0;
             this.btnFuncionEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -140,6 +211,7 @@
             // btnRemoverEmpleados
             // 
             this.btnRemoverEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(30)))));
+            this.btnRemoverEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRemoverEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRemoverEmpleados.FlatAppearance.BorderSize = 0;
             this.btnRemoverEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -158,6 +230,7 @@
             // btnAgregarEmpleados
             // 
             this.btnAgregarEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(30)))));
+            this.btnAgregarEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAgregarEmpleados.FlatAppearance.BorderSize = 0;
             this.btnAgregarEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -176,6 +249,7 @@
             // btnListaEmpleados
             // 
             this.btnListaEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(30)))));
+            this.btnListaEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnListaEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnListaEmpleados.FlatAppearance.BorderSize = 0;
             this.btnListaEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -194,15 +268,18 @@
             // btnFuncionAdmin
             // 
             this.btnFuncionAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnFuncionAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFuncionAdmin.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFuncionAdmin.FlatAppearance.BorderSize = 0;
             this.btnFuncionAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuncionAdmin.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnFuncionAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFuncionAdmin.Location = new System.Drawing.Point(0, 151);
             this.btnFuncionAdmin.Name = "btnFuncionAdmin";
             this.btnFuncionAdmin.Size = new System.Drawing.Size(250, 45);
             this.btnFuncionAdmin.TabIndex = 3;
             this.btnFuncionAdmin.Text = "Funcion Admin";
+            this.btnFuncionAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFuncionAdmin.UseVisualStyleBackColor = false;
             this.btnFuncionAdmin.Click += new System.EventHandler(this.btnFuncionAdmin_Click);
             // 
@@ -251,18 +328,18 @@
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
+            this.lblWelcome.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblWelcome.ForeColor = System.Drawing.Color.White;
             this.lblWelcome.Location = new System.Drawing.Point(132, 40);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(97, 24);
+            this.lblWelcome.Size = new System.Drawing.Size(0, 26);
             this.lblWelcome.TabIndex = 41;
-            this.lblWelcome.Text = "Welcome ";
             // 
             // btnBarra20
             // 
             this.btnBarra20.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnBarra20.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBarra20.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBarra20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnBarra20.Location = new System.Drawing.Point(531, 377);
             this.btnBarra20.Name = "btnBarra20";
@@ -275,7 +352,7 @@
             // btnBarra19
             // 
             this.btnBarra19.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnBarra19.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBarra19.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBarra19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnBarra19.Location = new System.Drawing.Point(410, 377);
             this.btnBarra19.Name = "btnBarra19";
@@ -288,7 +365,7 @@
             // btnBarra18
             // 
             this.btnBarra18.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnBarra18.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBarra18.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBarra18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnBarra18.Location = new System.Drawing.Point(298, 377);
             this.btnBarra18.Name = "btnBarra18";
@@ -301,7 +378,7 @@
             // btnBarra17
             // 
             this.btnBarra17.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnBarra17.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBarra17.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBarra17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnBarra17.Location = new System.Drawing.Point(182, 377);
             this.btnBarra17.Name = "btnBarra17";
@@ -314,7 +391,7 @@
             // btnBarra16
             // 
             this.btnBarra16.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnBarra16.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBarra16.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBarra16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnBarra16.Location = new System.Drawing.Point(63, 377);
             this.btnBarra16.Name = "btnBarra16";
@@ -327,7 +404,7 @@
             // btnMesa15
             // 
             this.btnMesa15.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnMesa15.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMesa15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMesa15.Location = new System.Drawing.Point(531, 301);
             this.btnMesa15.Name = "btnMesa15";
@@ -340,7 +417,7 @@
             // btnMesa14
             // 
             this.btnMesa14.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnMesa14.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMesa14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMesa14.Location = new System.Drawing.Point(410, 301);
             this.btnMesa14.Name = "btnMesa14";
@@ -353,7 +430,7 @@
             // btnMesa13
             // 
             this.btnMesa13.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnMesa13.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMesa13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMesa13.Location = new System.Drawing.Point(298, 301);
             this.btnMesa13.Name = "btnMesa13";
@@ -366,7 +443,7 @@
             // btnMesa12
             // 
             this.btnMesa12.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnMesa12.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMesa12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMesa12.Location = new System.Drawing.Point(182, 301);
             this.btnMesa12.Name = "btnMesa12";
@@ -379,7 +456,7 @@
             // btnMesa11
             // 
             this.btnMesa11.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnMesa11.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMesa11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMesa11.Location = new System.Drawing.Point(63, 301);
             this.btnMesa11.Name = "btnMesa11";
@@ -392,7 +469,7 @@
             // btnMesa10
             // 
             this.btnMesa10.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnMesa10.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMesa10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMesa10.Location = new System.Drawing.Point(531, 238);
             this.btnMesa10.Name = "btnMesa10";
@@ -405,7 +482,7 @@
             // btnMesa9
             // 
             this.btnMesa9.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnMesa9.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMesa9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMesa9.Location = new System.Drawing.Point(408, 238);
             this.btnMesa9.Name = "btnMesa9";
@@ -418,7 +495,7 @@
             // btnMesa8
             // 
             this.btnMesa8.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnMesa8.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMesa8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMesa8.Location = new System.Drawing.Point(298, 238);
             this.btnMesa8.Name = "btnMesa8";
@@ -431,7 +508,7 @@
             // btnMesa7
             // 
             this.btnMesa7.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnMesa7.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMesa7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMesa7.Location = new System.Drawing.Point(182, 238);
             this.btnMesa7.Name = "btnMesa7";
@@ -444,7 +521,7 @@
             // btnMesa6
             // 
             this.btnMesa6.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnMesa6.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMesa6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMesa6.Location = new System.Drawing.Point(63, 238);
             this.btnMesa6.Name = "btnMesa6";
@@ -457,7 +534,7 @@
             // btnMesa5
             // 
             this.btnMesa5.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnMesa5.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMesa5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMesa5.Location = new System.Drawing.Point(532, 184);
             this.btnMesa5.Name = "btnMesa5";
@@ -470,7 +547,7 @@
             // btnMesa4
             // 
             this.btnMesa4.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnMesa4.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMesa4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMesa4.Location = new System.Drawing.Point(410, 184);
             this.btnMesa4.Name = "btnMesa4";
@@ -483,7 +560,7 @@
             // btnMesa3
             // 
             this.btnMesa3.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnMesa3.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMesa3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMesa3.Location = new System.Drawing.Point(298, 184);
             this.btnMesa3.Name = "btnMesa3";
@@ -496,7 +573,7 @@
             // btnMesa2
             // 
             this.btnMesa2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnMesa2.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMesa2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMesa2.Location = new System.Drawing.Point(182, 184);
             this.btnMesa2.Name = "btnMesa2";
@@ -509,7 +586,7 @@
             // btnMesa1
             // 
             this.btnMesa1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnMesa1.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMesa1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMesa1.Location = new System.Drawing.Point(63, 184);
             this.btnMesa1.Name = "btnMesa1";
@@ -533,12 +610,16 @@
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.MaximumSize = new System.Drawing.Size(1000, 732);
             this.MinimumSize = new System.Drawing.Size(879, 606);
             this.Name = "FrmMenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipal";
+            this.Activated += new System.EventHandler(this.FrmMenuPrincipal_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
             this.panelMenuIzquierda.ResumeLayout(false);
+            this.panelSubMenuInventario.ResumeLayout(false);
             this.panelSubMenuEmpleado.ResumeLayout(false);
             this.panelSubMenuAdmin.ResumeLayout(false);
             this.panelFormularioChico.ResumeLayout(false);
@@ -580,5 +661,9 @@
         private System.Windows.Forms.Panel panelSubMenuEmpleado;
         private System.Windows.Forms.Button btnInfoMesas;
         private System.Windows.Forms.Button btnFuncionEmpleado;
+        private System.Windows.Forms.Button btnInventario;
+        private System.Windows.Forms.Panel panelSubMenuInventario;
+        private System.Windows.Forms.Button btnInfoInventario;
+        private System.Windows.Forms.Button btnAgregarProductos;
     }
 }

@@ -62,7 +62,14 @@ namespace BarLibrary
             return sb.ToString();
         }
 
-        public Persona FindById(List<Persona> listaUsuarios, Persona p1)
+        /// <summary>
+        /// Recibe una lista de personas y una persona, verifica que la persona recibida por parametros se encuentre en la lista
+        /// y luego la retorna
+        /// </summary>
+        /// <param name="listaUsuarios"></param>
+        /// <param name="p1"></param>
+        /// <returns></returns>
+        public Persona FindEmployee(List<Persona> listaUsuarios, Persona p1)
         {
             foreach (Persona item in listaUsuarios)
             {
@@ -89,6 +96,7 @@ namespace BarLibrary
         {
             return !(p1 == p2);
         }
+
         public static bool operator ==(List<Persona> p1, Persona p2)
         {
             if (p1 is not null && p2 is not null)
@@ -104,6 +112,7 @@ namespace BarLibrary
         {
             return !(p1 == p2);
         }
+
         public static bool operator ==(Persona p1, int id)
         {
             if (p1 is not null && id >0)

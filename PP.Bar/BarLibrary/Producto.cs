@@ -28,5 +28,7 @@ namespace BarLibrary
         public string Nombre { get { return nombre; } }
         public int Cantidad { get { return cantidad; } set { cantidad = value; } }
 
+        public abstract override string ToString();
+
     }
 }

@@ -30,5 +30,15 @@ namespace BarLibrary
             this.eIngredientes = eIngredientes;
         }
 
+        public List<EIngredientes> EIngredientes { get { return eIngredientes; }  set { eIngredientes = value; } }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"{Cantidad} unidades de {Nombre}");
+
+            return sb.ToString();
+        }
+
     }
 }

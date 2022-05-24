@@ -35,13 +35,15 @@
             // 
             // rtbLista
             // 
-            this.rtbLista.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.rtbLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbLista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(47)))));
-            this.rtbLista.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rtbLista.ForeColor = System.Drawing.Color.White;
+            this.rtbLista.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rtbLista.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.rtbLista.Location = new System.Drawing.Point(125, 10);
             this.rtbLista.Name = "rtbLista";
+            this.rtbLista.ReadOnly = true;
             this.rtbLista.Size = new System.Drawing.Size(530, 528);
             this.rtbLista.TabIndex = 0;
             this.rtbLista.Text = "";

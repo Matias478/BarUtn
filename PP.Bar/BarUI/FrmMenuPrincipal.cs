@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
 
 namespace BarUI
@@ -9,8 +10,8 @@ namespace BarUI
     public partial class FrmMenuPrincipal : Form
     {
         Persona usuarioLogueado;
-        Dictionary<int, Button> botones;
-        //Dictionary<int, bool> disponibilidadMesas;
+        static Dictionary<int, Button> botones;
+        static Dictionary<int, bool> disponibilidadMesas;
         private Form formActivo = null;
 
         public FrmMenuPrincipal()
@@ -25,20 +26,68 @@ namespace BarUI
         }
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
-            //ObtenerEstadoMesas();
-            lblWelcome.Text += usuarioLogueado.Nombre;
+            ObtenerEstadoMesas();
+            lblWelcome.Text += "Bienvenido al Bar-UTN "+ usuarioLogueado.Nombre;
             EsAdmin(usuarioLogueado);
+            CargarSonidoAmbiente();
         }
 
+        public static void CargarSonidoAmbiente()
+        {
+            try
+            {
+                SoundPlayer sp = new SoundPlayer(Properties.Resources.RuidoAmbiente);
+                sp.PlayLooping();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Verifica si el usuario ingresado es admin o un empleado normal 
+        /// y cambia la visibildad de los botones que controlan las funciones del admin, tambien carga diferentes imagenes dependiendo si es admin o empleado
+        /// </summary>
+        /// <param name="usuario"></param>
         private void EsAdmin(Persona usuario)
         {
             if (usuario.EsAdmin == false)
             {
                 btnFuncionAdmin.Visible = false;
                 btnFuncionEmpleado.Visible = true;
+                btnInventario.Visible = false;
+                try
+                {
+                    Bitmap image = new Bitmap(Properties.Resources.meseros);
+                    panelFormularioChico.BackgroundImage = image;
+                    panelFormularioChico.BackgroundImageLayout = ImageLayout.Stretch;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Nose pudo encontrar la imagen del empleado");
+                }
             }
+            else
+            {
+                try
+                {
+                    Bitmap image = new Bitmap(Properties.Resources.Administrador);
+                    panelFormularioChico.BackgroundImage = image;
+                    panelFormularioChico.BackgroundImageLayout = ImageLayout.Stretch;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Imagen de empleado no encontrada");
+                }
+            }
+
         }
 
+        /// <summary>
+        /// Instancia el dictionary de botones y agrega los 20 botones de mesas/barra
+        /// </summary>
         private void CargarMesas()
         {
             botones = new Dictionary<int, Button>();
@@ -67,31 +116,39 @@ namespace BarUI
 
         /// <summary>
         /// Usa el metodo EstadoMesas que devuelve una lista de mesas con ningun producto
-        /// Las recorre y segun su value pinta el boton en verde si estan libres y rojas sino
+        /// Las recorre y segun su value pinta el boton en verde si estan libres y rojas sino lo estan
         /// </summary>
-        //private void ObtenerEstadoMesas()
-        //{
-        //    disponibilidadMesas = Bar.EstadoMesas();
+        public static void ObtenerEstadoMesas()
+        {
+            disponibilidadMesas = Bar.EstadoMesas();
 
-        //    foreach (KeyValuePair<int, bool> mesa in disponibilidadMesas)
-        //    {
-        //        if (mesa.Value)
-        //        {
-        //            botones[mesa.Key].BackColor = Color.LightGreen;
-        //        }
-        //        else { botones[mesa.Key].BackColor = Color.IndianRed; }
-        //    }
-        //}
+            foreach (KeyValuePair<int, bool> mesa in disponibilidadMesas)
+            {
+                if (mesa.Value)
+                {
+                    botones[mesa.Key].BackColor = Color.LightGreen;
+                }
+                else { botones[mesa.Key].BackColor = Color.IndianRed; }
+            }
+        }
 
         private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Seguro que desea salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-               Application.Exit();
+                Application.Exit();
             }
+            else
+                e.Cancel = true;
         }
-            
 
+        /// <summary>
+        /// Recorre el dictionary botones, verifica que el valor sea igual a Button(auxBtn en este caso)
+        /// Luego verifica si la lista de productos de la mesa es null, de ese ser el caso llama a instanciar lista
+        /// Para despues llamar al metodo que muestra el form dentro de los limites del panel y llama a ObtenerEstadoMesas() de nuevo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_mesas_Click(object sender, EventArgs e)
         {
             Button auxBtn = (Button)sender;
@@ -100,21 +157,30 @@ namespace BarUI
             {
                 if (item.Value == auxBtn)
                 {
-                    //MessageBox.Show(Bar.MostrarMesa(item.Key));
+                    if (Bar.Mesas[item.Key].Producto == null)
+                    {
+                        Bar.Mesas[item.Key].InstanciarLista(item.Key + 1);
+                    }
                     abrirFormPequeño(new FrmMenu(item.Key));
+                    ObtenerEstadoMesas();
                 }
             }
         }
 
+        /// <summary>
+        /// Abre un form que muestra la lista de empleados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnListaEmpleados_Click(object sender, EventArgs e)
         {
-            bool tipoLista=true;//si es true muestra la lista de empleados
+            string tipoLista = "ListaEmpleados";// indica que tipo de lista mostrara
             abrirFormPequeño(new FrmLista(tipoLista));
             //EsconderSubMenu();
         }
 
         /// <summary>
-        /// Abre un form en el panel en lugar de abrirlo en forma modal
+        /// Abre un form dentro los limites de un panel en lugar de abrirlo en forma modal
         /// </summary>
         /// <param name="childForm"></param>
         private void abrirFormPequeño(Form childForm)
@@ -133,6 +199,11 @@ namespace BarUI
             childForm.Show();
         }
 
+        /// <summary>
+        /// Abre el sub-menu para acceder a las funciones del admin
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnFuncionAdmin_Click(object sender, EventArgs e)
         {
             MostrarSubMenu(panelSubMenuAdmin);
@@ -143,6 +214,7 @@ namespace BarUI
         {
             panelSubMenuAdmin.Visible = false;
             panelSubMenuEmpleado.Visible = false;
+            panelSubMenuInventario.Visible = false;
         }
         private void EsconderSubMenu()
         {
@@ -150,9 +222,13 @@ namespace BarUI
             {
                 panelSubMenuAdmin.Visible = false;
             }
-            if(panelSubMenuEmpleado.Visible==true)
+            if (panelSubMenuEmpleado.Visible == true)
             {
                 panelSubMenuEmpleado.Visible = false;
+            }
+            if (panelSubMenuInventario.Visible == true)
+            {
+                panelSubMenuInventario.Visible = false;
             }
         }
         private void MostrarSubMenu(Panel subMenu)
@@ -168,26 +244,67 @@ namespace BarUI
 
         #endregion
 
+        /// <summary>
+        /// Abre el form para poder llenar los datos para agregar un empleado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregarEmpleados_Click(object sender, EventArgs e)
         {
             abrirFormPequeño(new FrmAgregarEmpleado());
         }
 
+        /// <summary>
+        /// Abre el sub-menu para acceder a las funciones del empleado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnFuncionEmpleado_Click(object sender, EventArgs e)
         {
             MostrarSubMenu(panelSubMenuEmpleado);
         }
 
+        /// <summary>
+        ///  Abre un form que muestra la lista de mesas con su informacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInfoMesas_Click(object sender, EventArgs e)
         {
-            bool tipoLista=false;// si es false muestra la lista de mesas
+            string tipoLista = "ListaMesas";// indica que tipo de lista mostrara
             abrirFormPequeño(new FrmLista(tipoLista));
         }
 
+        /// <summary>
+        /// Abre un form para elegir y remover empleados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRemoverEmpleados_Click(object sender, EventArgs e)
         {
             abrirFormPequeño(new FrmRemoverEmpleado());
-
         }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            MostrarSubMenu(panelSubMenuInventario);
+        }
+
+        private void btnInfoInventario_Click(object sender, EventArgs e)
+        {
+            string tipoLista = "ListaInventario";// indica que tipo de lista mostrara
+            abrirFormPequeño(new FrmLista(tipoLista));
+        }
+
+        private void btnAgregarProductos_Click(object sender, EventArgs e)
+        {
+            abrirFormPequeño(new FrmAgregarProductos());
+        }
+
+        private void FrmMenuPrincipal_Activated(object sender, EventArgs e)
+        {
+            ObtenerEstadoMesas();
+        }
+
     }
 }

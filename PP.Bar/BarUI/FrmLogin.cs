@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,7 +31,7 @@ namespace BarUI
                 string nombre = txbNombre.Text;
                 string pass = txbPass.Text;
                 bool esAdmin= cbEsAdmin.Checked;
-                usuario = Bar.ChekearUsuario(nombre, pass, esAdmin);
+                usuario = Bar.CheckearUsuario(nombre, pass, esAdmin);
                 if (usuario is not null)
                 {
                     FrmMenuPrincipal frmMenu = new FrmMenuPrincipal(usuario);
@@ -38,8 +39,18 @@ namespace BarUI
                     this.Hide();
                 }else
                 {
-                    MessageBox.Show("El usuario ingresado es incorrecto","Error!!!",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                    //Sonido a a a no dijiste la palabra magica xd!!!!
+                    try
+                    {
+                        using(SoundPlayer sp = new SoundPlayer(Properties.Resources.sonido))
+                        {
+                            sp.Play();
+                        }
+                        MessageBox.Show("El usuario ingresado es incorrecto", "Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("No se pudo encontrar el archivo de audio!!!");
+                    }
                 }
             }
         }

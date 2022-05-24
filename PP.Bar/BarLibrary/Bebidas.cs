@@ -26,6 +26,20 @@ namespace BarLibrary
             this.cantidadMm=cantidadMm;
         }
 
+        public bool ContieneALohol { get { return contieneALohol; } set { contieneALohol=value; } }
+        public ECantMm CantidadMm { get { return cantidadMm; } set { cantidadMm=value; } }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"{cantidad} unidades de {cantidadMm} de {Nombre}");
+            if(contieneALohol==false)
+            {
+                sb.Append($" No contiene alcohol");
+            }else { sb.Append($" Contiene alcohol"); }
+
+            return sb.ToString();
+        }
 
     }
 }

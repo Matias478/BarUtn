@@ -45,7 +45,7 @@ namespace BarUI
             Persona auxPersona;
             foreach (Persona item in auxLista)
             {
-                auxPersona = item.FindById(auxLista, (Persona)LtbListaEmpleados.SelectedItem);
+                auxPersona = item.FindEmployee(auxLista, (Persona)LtbListaEmpleados.SelectedItem);
                 if (auxLista==auxPersona)
                 {
                     auxLista.Remove(auxPersona);

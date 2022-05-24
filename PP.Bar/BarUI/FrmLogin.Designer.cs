@@ -74,7 +74,9 @@
             // btnLogueate
             // 
             this.btnLogueate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnLogueate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLogueate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogueate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogueate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnLogueate.Location = new System.Drawing.Point(97, 296);
             this.btnLogueate.Name = "btnLogueate";
             this.btnLogueate.Size = new System.Drawing.Size(146, 55);
@@ -99,6 +101,9 @@
             // btnCompletarEmpleado
             // 
             this.btnCompletarEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCompletarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompletarEmpleado.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCompletarEmpleado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCompletarEmpleado.Location = new System.Drawing.Point(345, 332);
             this.btnCompletarEmpleado.Name = "btnCompletarEmpleado";
             this.btnCompletarEmpleado.Size = new System.Drawing.Size(154, 36);
@@ -110,6 +115,9 @@
             // btnCompletarAdmin
             // 
             this.btnCompletarAdmin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCompletarAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompletarAdmin.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCompletarAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCompletarAdmin.Location = new System.Drawing.Point(345, 278);
             this.btnCompletarAdmin.Name = "btnCompletarAdmin";
             this.btnCompletarAdmin.Size = new System.Drawing.Size(154, 35);
@@ -134,6 +142,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
