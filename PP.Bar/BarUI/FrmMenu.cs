@@ -133,6 +133,11 @@ namespace BarUI
             FrmMenuPrincipal.CargarSonidoAmbiente();
         }
 
+        /// <summary>
+        /// Verifica que esten los datos necesarios para cerrar una cuenta y muestra el saldo final por un MessageBox, limpia la lista y coloca el saldo en cero
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCerrarCuenta_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrEmpty(cmbTipoDePago.Text) || cmbTipoDePago.Text=="Inconcluso")
@@ -146,12 +151,12 @@ namespace BarUI
                    auxMesa.ConEstacionamiento = cxbConEstacionamiento.Checked;
                    auxMesa.MetodoDePago = (EMetodoDePago)Enum.Parse(typeof(EMetodoDePago), cmbTipoDePago.Text);
 
-                   MessageBox.Show("Saldo Final: " + auxMesa.CalcularTotal(/*auxMesa.Producto*/).ToString());
-                   auxMesa.Saldo = auxMesa.CalcularTotal(/*auxMesa.Producto*/);
+                   MessageBox.Show("Saldo Final: " + auxMesa.CalcularTotal().ToString());
+                   auxMesa.Saldo = auxMesa.CalcularTotal();
                    lblSaldo.Text = "Saldo Final" + auxMesa.Saldo.ToString();
                    auxMesa.Pedidos.Clear();
                    auxMesa.Saldo = 0;
-                FrmMenuPrincipal.ObtenerEstadoMesas();
+                   FrmMenuPrincipal.ObtenerEstadoMesas();
                    this.Close();
                }
         }

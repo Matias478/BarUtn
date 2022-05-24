@@ -328,10 +328,10 @@
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
+            this.lblWelcome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.lblWelcome.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblWelcome.ForeColor = System.Drawing.Color.White;
-            this.lblWelcome.Location = new System.Drawing.Point(132, 40);
+            this.lblWelcome.Location = new System.Drawing.Point(38, 19);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(0, 26);
             this.lblWelcome.TabIndex = 41;
@@ -339,6 +339,7 @@
             // btnBarra20
             // 
             this.btnBarra20.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnBarra20.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBarra20.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBarra20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnBarra20.Location = new System.Drawing.Point(531, 377);
@@ -352,9 +353,10 @@
             // btnBarra19
             // 
             this.btnBarra19.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnBarra19.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBarra19.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBarra19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBarra19.Location = new System.Drawing.Point(410, 377);
+            this.btnBarra19.Location = new System.Drawing.Point(414, 377);
             this.btnBarra19.Name = "btnBarra19";
             this.btnBarra19.Size = new System.Drawing.Size(97, 38);
             this.btnBarra19.TabIndex = 39;
@@ -365,6 +367,7 @@
             // btnBarra18
             // 
             this.btnBarra18.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnBarra18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBarra18.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBarra18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnBarra18.Location = new System.Drawing.Point(298, 377);
@@ -378,6 +381,7 @@
             // btnBarra17
             // 
             this.btnBarra17.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnBarra17.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBarra17.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBarra17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnBarra17.Location = new System.Drawing.Point(182, 377);
@@ -391,6 +395,7 @@
             // btnBarra16
             // 
             this.btnBarra16.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnBarra16.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBarra16.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBarra16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnBarra16.Location = new System.Drawing.Point(63, 377);
@@ -404,9 +409,10 @@
             // btnMesa15
             // 
             this.btnMesa15.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnMesa15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMesa15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa15.Location = new System.Drawing.Point(531, 301);
+            this.btnMesa15.Location = new System.Drawing.Point(531, 315);
             this.btnMesa15.Name = "btnMesa15";
             this.btnMesa15.Size = new System.Drawing.Size(96, 38);
             this.btnMesa15.TabIndex = 35;
@@ -417,9 +423,10 @@
             // btnMesa14
             // 
             this.btnMesa14.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnMesa14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMesa14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa14.Location = new System.Drawing.Point(410, 301);
+            this.btnMesa14.Location = new System.Drawing.Point(414, 315);
             this.btnMesa14.Name = "btnMesa14";
             this.btnMesa14.Size = new System.Drawing.Size(97, 38);
             this.btnMesa14.TabIndex = 34;
@@ -430,9 +437,10 @@
             // btnMesa13
             // 
             this.btnMesa13.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnMesa13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMesa13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa13.Location = new System.Drawing.Point(298, 301);
+            this.btnMesa13.Location = new System.Drawing.Point(298, 315);
             this.btnMesa13.Name = "btnMesa13";
             this.btnMesa13.Size = new System.Drawing.Size(97, 38);
             this.btnMesa13.TabIndex = 33;
@@ -443,9 +451,10 @@
             // btnMesa12
             // 
             this.btnMesa12.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnMesa12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMesa12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa12.Location = new System.Drawing.Point(182, 301);
+            this.btnMesa12.Location = new System.Drawing.Point(182, 315);
             this.btnMesa12.Name = "btnMesa12";
             this.btnMesa12.Size = new System.Drawing.Size(95, 38);
             this.btnMesa12.TabIndex = 32;
@@ -456,9 +465,10 @@
             // btnMesa11
             // 
             this.btnMesa11.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnMesa11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMesa11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa11.Location = new System.Drawing.Point(63, 301);
+            this.btnMesa11.Location = new System.Drawing.Point(63, 315);
             this.btnMesa11.Name = "btnMesa11";
             this.btnMesa11.Size = new System.Drawing.Size(97, 38);
             this.btnMesa11.TabIndex = 31;
@@ -469,9 +479,10 @@
             // btnMesa10
             // 
             this.btnMesa10.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnMesa10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMesa10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa10.Location = new System.Drawing.Point(531, 238);
+            this.btnMesa10.Location = new System.Drawing.Point(531, 247);
             this.btnMesa10.Name = "btnMesa10";
             this.btnMesa10.Size = new System.Drawing.Size(96, 38);
             this.btnMesa10.TabIndex = 30;
@@ -482,11 +493,12 @@
             // btnMesa9
             // 
             this.btnMesa9.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnMesa9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMesa9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa9.Location = new System.Drawing.Point(408, 238);
+            this.btnMesa9.Location = new System.Drawing.Point(414, 247);
             this.btnMesa9.Name = "btnMesa9";
-            this.btnMesa9.Size = new System.Drawing.Size(99, 38);
+            this.btnMesa9.Size = new System.Drawing.Size(97, 38);
             this.btnMesa9.TabIndex = 29;
             this.btnMesa9.Text = "Mesa 9";
             this.btnMesa9.UseVisualStyleBackColor = false;
@@ -495,9 +507,10 @@
             // btnMesa8
             // 
             this.btnMesa8.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnMesa8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMesa8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa8.Location = new System.Drawing.Point(298, 238);
+            this.btnMesa8.Location = new System.Drawing.Point(298, 247);
             this.btnMesa8.Name = "btnMesa8";
             this.btnMesa8.Size = new System.Drawing.Size(97, 38);
             this.btnMesa8.TabIndex = 28;
@@ -508,9 +521,10 @@
             // btnMesa7
             // 
             this.btnMesa7.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnMesa7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMesa7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa7.Location = new System.Drawing.Point(182, 238);
+            this.btnMesa7.Location = new System.Drawing.Point(182, 247);
             this.btnMesa7.Name = "btnMesa7";
             this.btnMesa7.Size = new System.Drawing.Size(95, 38);
             this.btnMesa7.TabIndex = 27;
@@ -521,9 +535,10 @@
             // btnMesa6
             // 
             this.btnMesa6.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnMesa6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMesa6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa6.Location = new System.Drawing.Point(63, 238);
+            this.btnMesa6.Location = new System.Drawing.Point(63, 247);
             this.btnMesa6.Name = "btnMesa6";
             this.btnMesa6.Size = new System.Drawing.Size(97, 38);
             this.btnMesa6.TabIndex = 26;
@@ -534,9 +549,10 @@
             // btnMesa5
             // 
             this.btnMesa5.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnMesa5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMesa5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa5.Location = new System.Drawing.Point(532, 184);
+            this.btnMesa5.Location = new System.Drawing.Point(531, 173);
             this.btnMesa5.Name = "btnMesa5";
             this.btnMesa5.Size = new System.Drawing.Size(96, 39);
             this.btnMesa5.TabIndex = 25;
@@ -547,11 +563,12 @@
             // btnMesa4
             // 
             this.btnMesa4.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnMesa4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMesa4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa4.Location = new System.Drawing.Point(410, 184);
+            this.btnMesa4.Location = new System.Drawing.Point(414, 173);
             this.btnMesa4.Name = "btnMesa4";
-            this.btnMesa4.Size = new System.Drawing.Size(99, 39);
+            this.btnMesa4.Size = new System.Drawing.Size(97, 39);
             this.btnMesa4.TabIndex = 24;
             this.btnMesa4.Text = "Mesa 4";
             this.btnMesa4.UseVisualStyleBackColor = false;
@@ -560,9 +577,10 @@
             // btnMesa3
             // 
             this.btnMesa3.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnMesa3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMesa3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa3.Location = new System.Drawing.Point(298, 184);
+            this.btnMesa3.Location = new System.Drawing.Point(298, 173);
             this.btnMesa3.Name = "btnMesa3";
             this.btnMesa3.Size = new System.Drawing.Size(97, 39);
             this.btnMesa3.TabIndex = 23;
@@ -573,9 +591,10 @@
             // btnMesa2
             // 
             this.btnMesa2.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnMesa2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMesa2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa2.Location = new System.Drawing.Point(182, 184);
+            this.btnMesa2.Location = new System.Drawing.Point(182, 173);
             this.btnMesa2.Name = "btnMesa2";
             this.btnMesa2.Size = new System.Drawing.Size(95, 39);
             this.btnMesa2.TabIndex = 22;
@@ -586,9 +605,10 @@
             // btnMesa1
             // 
             this.btnMesa1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnMesa1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMesa1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMesa1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMesa1.Location = new System.Drawing.Point(63, 184);
+            this.btnMesa1.Location = new System.Drawing.Point(63, 173);
             this.btnMesa1.Name = "btnMesa1";
             this.btnMesa1.Size = new System.Drawing.Size(97, 39);
             this.btnMesa1.TabIndex = 21;
@@ -615,7 +635,6 @@
             this.Name = "FrmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipal";
-            this.Activated += new System.EventHandler(this.FrmMenuPrincipal_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
             this.panelMenuIzquierda.ResumeLayout(false);

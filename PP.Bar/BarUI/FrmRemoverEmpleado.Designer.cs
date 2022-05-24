@@ -62,6 +62,7 @@
             // 
             this.btnRemover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
+            this.btnRemover.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRemover.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnRemover.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnRemover.Location = new System.Drawing.Point(64, 295);

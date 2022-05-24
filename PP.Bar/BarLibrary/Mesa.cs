@@ -74,6 +74,10 @@ namespace BarLibrary
 
             return sb.ToString();
         }
+        /// <summary>
+        /// Carga la lista de productos hardcodeada a la lista de pedidos, para poder mostrarla mejor
+        /// </summary>
+        /// <returns></returns>
         private Dictionary<Producto,int> CargarProductosEnPedidos()
         {
             foreach (Producto item in Producto)
@@ -84,7 +88,8 @@ namespace BarLibrary
             return null;    
         }
         /// <summary>
-        /// Agrega el producto recibido a la lista de la mesa y reduce la cantidad del mismo 
+        /// Agrega el producto recibido a la lista de productos de la mesa , reduce la cantidad del mismo en el inventario
+        /// Tambien agrega el producto y la cantidad al dictionary de pedidos, para poder mostrar la cant pedida por mesa.
         /// </summary>
         /// <param name="productoRecibido"></param>
         /// <param name="cant"></param>
@@ -131,7 +136,7 @@ namespace BarLibrary
         /// </summary>
         /// <param name="pedido"></param>
         /// <returns></returns>
-        public float CalcularTotal(/*List<Producto> pedido*/)
+        public float CalcularTotal()
         {
             float costo = CalcularParcial();    
 

@@ -74,6 +74,7 @@
             // btnLogueate
             // 
             this.btnLogueate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLogueate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogueate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogueate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogueate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -101,6 +102,7 @@
             // btnCompletarEmpleado
             // 
             this.btnCompletarEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCompletarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCompletarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompletarEmpleado.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCompletarEmpleado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -115,6 +117,7 @@
             // btnCompletarAdmin
             // 
             this.btnCompletarAdmin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCompletarAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCompletarAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompletarAdmin.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCompletarAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;

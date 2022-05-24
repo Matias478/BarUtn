@@ -55,6 +55,7 @@
             // btnAgregarProductos
             // 
             this.btnAgregarProductos.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarProductos.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAgregarProductos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -105,6 +106,7 @@
             // btnCerrarCuenta
             // 
             this.btnCerrarCuenta.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrarCuenta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarCuenta.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCerrarCuenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;

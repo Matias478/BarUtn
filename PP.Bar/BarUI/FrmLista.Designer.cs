@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLista));
             this.rtbLista = new System.Windows.Forms.RichTextBox();
             this.btnCerrarFrmListaEmpleados = new System.Windows.Forms.Button();
+            this.btnRellenarStock = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rtbLista
@@ -39,12 +40,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbLista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(47)))));
-            this.rtbLista.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rtbLista.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rtbLista.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rtbLista.Location = new System.Drawing.Point(125, 10);
+            this.rtbLista.Location = new System.Drawing.Point(192, 12);
             this.rtbLista.Name = "rtbLista";
             this.rtbLista.ReadOnly = true;
-            this.rtbLista.Size = new System.Drawing.Size(530, 528);
+            this.rtbLista.Size = new System.Drawing.Size(477, 528);
             this.rtbLista.TabIndex = 0;
             this.rtbLista.Text = "";
             // 
@@ -64,12 +65,28 @@
             this.btnCerrarFrmListaEmpleados.UseVisualStyleBackColor = false;
             this.btnCerrarFrmListaEmpleados.Click += new System.EventHandler(this.btnCerrarFrmListaEmpleados_Click);
             // 
+            // btnRellenarStock
+            // 
+            this.btnRellenarStock.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRellenarStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(47)))));
+            this.btnRellenarStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRellenarStock.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRellenarStock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRellenarStock.Location = new System.Drawing.Point(77, 302);
+            this.btnRellenarStock.Name = "btnRellenarStock";
+            this.btnRellenarStock.Size = new System.Drawing.Size(73, 65);
+            this.btnRellenarStock.TabIndex = 2;
+            this.btnRellenarStock.Text = "Rellenar Stock";
+            this.btnRellenarStock.UseVisualStyleBackColor = false;
+            this.btnRellenarStock.Click += new System.EventHandler(this.btnRellenarStock_Click);
+            // 
             // FrmLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(681, 554);
+            this.Controls.Add(this.btnRellenarStock);
             this.Controls.Add(this.btnCerrarFrmListaEmpleados);
             this.Controls.Add(this.rtbLista);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -86,5 +103,6 @@
 
         private System.Windows.Forms.RichTextBox rtbLista;
         private System.Windows.Forms.Button btnCerrarFrmListaEmpleados;
+        private System.Windows.Forms.Button btnRellenarStock;
     }
 }

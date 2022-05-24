@@ -32,19 +32,11 @@ namespace BarUI
             }
         }
 
-        public static void CargarSonidoDeExito()
-        {
-            try
-            {
-                SoundPlayer sp = new SoundPlayer(Properties.Resources.correct_6033);
-                sp.Play();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
+        /// <summary>
+        /// Agrega una persona a la lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             float sueldo = 0;
@@ -93,7 +85,6 @@ namespace BarUI
                     Bar.ListaUsuarios.Add(empleadoCreado);
                     if (esAdmin == false)
                     {
-                        CargarSonidoDeExito();
                         MessageBox.Show("Empleado Creado exitosamente");
                         RefrescarTextBox();
                     }

@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\RTECH\\source\\repos\\PP.Bar\\BarUI\\BarUI.csproj",
+      "projectUniqueName": "C:\\Users\\RTECH\\Desktop\\BarUtn\\PP.Bar\\BarUI\\BarUI.csproj",
       "projectName": "BarUI",
-      "projectPath": "C:\\Users\\RTECH\\source\\repos\\PP.Bar\\BarUI\\BarUI.csproj",
+      "projectPath": "C:\\Users\\RTECH\\Desktop\\BarUtn\\PP.Bar\\BarUI\\BarUI.csproj",
       "packagesPath": "C:\\Users\\RTECH\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\RTECH\\source\\repos\\PP.Bar\\BarUI\\obj\\",
+      "outputPath": "C:\\Users\\RTECH\\Desktop\\BarUtn\\PP.Bar\\BarUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\RTECH\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\RTECH\\source\\repos\\PP.Bar\\BarLibrary\\BarLibrary.csproj": {
-              "projectPath": "C:\\Users\\RTECH\\source\\repos\\PP.Bar\\BarLibrary\\BarLibrary.csproj"
+            "C:\\Users\\RTECH\\Desktop\\BarUtn\\PP.Bar\\BarLibrary\\BarLibrary.csproj": {
+              "projectPath": "C:\\Users\\RTECH\\Desktop\\BarUtn\\PP.Bar\\BarLibrary\\BarLibrary.csproj"
             }
           }
         }

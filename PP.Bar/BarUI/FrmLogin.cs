@@ -20,10 +20,26 @@ namespace BarUI
             InitializeComponent();
         }
 
+        private void CargarNoDijisteLaPalabraMagica()
+        {
+            try
+            {
+                using (SoundPlayer sp = new SoundPlayer(Properties.Resources.sonido))
+                {
+                    sp.Play();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo encontrar el archivo de audio!!!");
+            }
+        }
+
         private void btnLogueate_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrEmpty(txbNombre.Text) && string.IsNullOrEmpty(txbPass.Text))
             {
+                CargarNoDijisteLaPalabraMagica();
                 MessageBox.Show("Debe ingresar datos para poder loguearse","Error!!!",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
@@ -39,18 +55,8 @@ namespace BarUI
                     this.Hide();
                 }else
                 {
-                    try
-                    {
-                        using(SoundPlayer sp = new SoundPlayer(Properties.Resources.sonido))
-                        {
-                            sp.Play();
-                        }
-                        MessageBox.Show("El usuario ingresado es incorrecto", "Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show("No se pudo encontrar el archivo de audio!!!");
-                    }
+                    CargarNoDijisteLaPalabraMagica();
+                    MessageBox.Show("El usuario ingresado es incorrecto", "Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

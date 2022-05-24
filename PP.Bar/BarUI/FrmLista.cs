@@ -23,23 +23,34 @@ namespace BarUI
             this.tipoLista = lista;
         }
 
+        /// <summary>
+        /// Segun que reciba por parametros muestra la lista de lo que recibio
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmListaEmpleados_Load(object sender, EventArgs e)
         {
             switch (tipoLista)
             {
                 case "ListaEmpleados":
                     rtbLista.Text = Bar.MostrarEmpleados();
-                break;
+                    btnRellenarStock.Visible = false;
+                    break;
                 case "ListaMesas":
                    rtbLista.Text = Bar.MostrarListaMesas();
+                    btnRellenarStock.Visible = false;
                     break;
                 case "ListaInventario":
                     rtbLista.Text = Bar.MostrarInventario();
                     CuandoQuedaPocoStock();
+                    btnRellenarStock.Visible = true;
                     break;
             }
         }
         
+        /// <summary>
+        /// Avisa por un messageBox que queda poco stock de un producto
+        /// </summary>
         private void CuandoQuedaPocoStock()
         {
             foreach (Producto item in Bar.Inventario)
@@ -54,12 +65,31 @@ namespace BarUI
             }
         }
 
+        private void RellenarStock()
+        {
+            foreach (Producto item in Bar.Inventario)
+            {
+                if (item.Cantidad < 20)
+                {
+                    item.Cantidad += 30;
+                }
+            }
+        }
+
         private void btnCerrarFrmListaEmpleados_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-
-
+        /// <summary>
+        /// Al producto que tenga menos de 20 unidades, se le rellenaran mas al apretar este boton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRellenarStock_Click(object sender, EventArgs e)
+        {
+            RellenarStock();
+            rtbLista.Text = Bar.MostrarInventario();
+        }
     }
 }

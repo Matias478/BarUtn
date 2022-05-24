@@ -145,7 +145,7 @@ namespace BarUI
         /// <summary>
         /// Recorre el dictionary botones, verifica que el valor sea igual a Button(auxBtn en este caso)
         /// Luego verifica si la lista de productos de la mesa es null, de ese ser el caso llama a instanciar lista
-        /// Para despues llamar al metodo que muestra el form dentro de los limites del panel y llama a ObtenerEstadoMesas() de nuevo
+        /// Para despues llamar al metodo que muestra el form dentro de los limites del panel y llama a ObtenerEstadoMesas() de nuevo para cambiar el color de las mesas
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -168,7 +168,7 @@ namespace BarUI
         }
 
         /// <summary>
-        /// Abre un form que muestra la lista de empleados
+        /// Abre el FrmLista pasadole por parametros que tipo de lista se quiere mostrar
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -265,7 +265,7 @@ namespace BarUI
         }
 
         /// <summary>
-        ///  Abre un form que muestra la lista de mesas con su informacion
+        /// Abre el FrmLista pasadole por parametros que tipo de lista se quiere mostrar
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -285,26 +285,36 @@ namespace BarUI
             abrirFormPequeño(new FrmRemoverEmpleado());
         }
 
+        /// <summary>
+        /// Abre el sub-Menu de inventario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInventario_Click(object sender, EventArgs e)
         {
             MostrarSubMenu(panelSubMenuInventario);
         }
-
+        /// <summary>
+        /// Abre el FrmLista pasadole por parametros que tipo de lista se quiere mostrar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInfoInventario_Click(object sender, EventArgs e)
         {
             string tipoLista = "ListaInventario";// indica que tipo de lista mostrara
             abrirFormPequeño(new FrmLista(tipoLista));
         }
 
+        /// <summary>
+        /// Abre el form para agregar productos al inventario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregarProductos_Click(object sender, EventArgs e)
         {
             abrirFormPequeño(new FrmAgregarProductos());
         }
 
-        private void FrmMenuPrincipal_Activated(object sender, EventArgs e)
-        {
-            ObtenerEstadoMesas();
-        }
 
     }
 }
